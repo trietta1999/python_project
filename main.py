@@ -18,7 +18,7 @@ btn = st.button("Enter")
 
 if btn:
 	st.write("Bạn tên là %s, %s tuổi" % (ten, tuoi))
-	data_file = st.file_uploader("Upload", type=['jpg'])
+	data_file = st.file_uploader("Upload")
 	if data_file:
 		st.write(type(data_file))
 	#else: st.write("None")
