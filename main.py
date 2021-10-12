@@ -1,5 +1,5 @@
 import streamlit as st
-import os
+import os, time
 
 ten = st.text_input("Nhập tên:")
 tuoi = st.text_input("Nhập tuổi:")
@@ -17,5 +17,6 @@ if btn:
     if data_file is not None:
         file_details = {"Filename":data_file.name,"FileType":data_file.type,"FileSize":data_file.size}
         st.write(file_details)
+        time.sleep(5)
     #st.info("Kết thúc chương trình")
     #st.info("Nhấn vào ≡ -> Rerun để chạy lại")
