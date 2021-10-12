@@ -14,7 +14,7 @@ btn = st.button("Enter")
 if btn:
     st.write("Bạn tên là %s, %s tuổi" % (ten, tuoi))
     data_file = st.file_uploader("Upload")
-    st.write(t)
     file_details = {"Filename":data_file.name,"FileType":data_file.type,"FileSize":data_file.size}
+    st.write(file_details)
     #st.info("Kết thúc chương trình")
     #st.info("Nhấn vào ≡ -> Rerun để chạy lại")
