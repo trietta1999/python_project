@@ -22,6 +22,6 @@ if btn:
 	if data_file:
 		file_details = {"Filename":data_file.name,"FileType":data_file.type,"FileSize":data_file.size}
 		st.image(load_image(data_file),width=250)
-    else: st.write("None")
+	else: st.write("None")
 #st.info("Kết thúc chương trình")
 #st.info("Nhấn vào ≡ -> Rerun để chạy lại")
