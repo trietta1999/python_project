@@ -1,5 +1,6 @@
 import streamlit as st
-import os, pyautogui
+import os
+#import pyautogui
 
 os.system("pip uninstall pyqt5")
 os.system("pip install pyautogui")
