@@ -25,15 +25,15 @@ static_store = get_static_store()
 
 if btn:
 	st.write("Bạn tên là %s, %s tuổi" % (ten, tuoi))
-	data_file = st.file_uploader("Upload")
-	if data_file:
-		c = data_file.getvalue()
-		if not c in static_store.values():
-			static_store[data_file] = data_file
-	else:
-		static_store.clear()  # Hack to clear list if the user clears the cache and reloads the page
-		st.info("Upload one or more `.py` files.")
-	for v in static_store.values():
-		st.code(v)
+# 	data_file = st.file_uploader("Upload")
+# 	if data_file:
+# 		c = data_file.getvalue()
+# 		if not c in static_store.values():
+# 			static_store[data_file] = data_file
+# 	else:
+# 		static_store.clear()  # Hack to clear list if the user clears the cache and reloads the page
+# 		st.info("Upload one or more `.py` files.")
+# 	for v in static_store.values():
+# 		st.code(v)
 	#	st.write(type(data_file))
 	#else: st.write("None")
