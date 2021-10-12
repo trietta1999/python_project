@@ -5,8 +5,8 @@ while (1):
         with st.form("Test"):
             ten = st.text_input("Nhập tên:")
             tuoi = st.text_input("Nhập tuổi:")
-            submitted = st.form_submit_button("Enter")
-            if submitted: st.write('on')
+            #submitted = st.form_submit_button("Enter")
+            if st.form_submit_button("Enter"): st.write('on')
             else: st.write('off')
     except: pass
 
