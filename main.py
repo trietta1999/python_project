@@ -19,6 +19,6 @@ if btn:
         #st.write(file_details)
         #time.sleep(5)
         f = open(data_file,"r")
-        st.write(f.read())
+        print(f.read())
     #st.info("Kết thúc chương trình")
     #st.info("Nhấn vào ≡ -> Rerun để chạy lại")
