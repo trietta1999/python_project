@@ -24,7 +24,6 @@ if btn:
 	#content = data_file.getvalue()
 	if not data_file:
 		file_details.info("Please upload a file of type: " + ", ".join(["csv", "png", "jpg"]))
-		return
 	if isinstance(data_file, BytesIO):
 		file_details.image(data_file)
 	data_file.close()
