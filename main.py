@@ -14,5 +14,5 @@ while (1):
     if btn: is_pressed.update({"pressed": True})
     if is_pressed["pressed"]:
         st.write('on')
-        is_pressed.update({"pressed": None})
+        is_pressed = button_states()
     #else: st.write('off')
