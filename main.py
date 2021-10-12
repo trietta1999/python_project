@@ -4,12 +4,12 @@ import streamlit as st
 def button_states():
     return {"pressed": None}
 
+ten = st.text_input("Nhập tên:")
+tuoi = st.text_input("Nhập tuổi:")
+btn = st.button("Enter")
+
 while (1):
-    try:
-        ten = st.text_input("Nhập tên:")
-        tuoi = st.text_input("Nhập tuổi:")
-    except: pass
-    btn = st.button("Enter")
+
     is_pressed = button_states()
     if btn: is_pressed.update({"pressed": True})
     else: is_pressed.update({"pressed": False})
