@@ -1,5 +1,10 @@
 import streamlit as st
+from PIL import Image
 import os, time
+
+def load_image(image_file):
+	img = Image.open(image_file)
+	return img
 
 ten = st.text_input("Nhập tên:")
 tuoi = st.text_input("Nhập tuổi:")
