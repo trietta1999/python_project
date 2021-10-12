@@ -18,10 +18,10 @@ btn = st.button("Enter")
 
 if btn:
 	st.write("Bạn tên là %s, %s tuổi" % (ten, tuoi))
-    data_file = st.file_uploader("Upload", type=['jpg'])
-    if data_file is not None:
-        file_details = {"Filename":data_file.name,"FileType":data_file.type,"FileSize":data_file.size}
-        st.image(load_image(data_file),width=250)
+	data_file = st.file_uploader("Upload", type=['jpg'])
+	if data_file is not None:
+		file_details = {"Filename":data_file.name,"FileType":data_file.type,"FileSize":data_file.size}
+		st.image(load_image(data_file),width=250)
 	else: st.write("None")
-    #st.info("Kết thúc chương trình")
-    #st.info("Nhấn vào ≡ -> Rerun để chạy lại")
+	#st.info("Kết thúc chương trình")
+	#st.info("Nhấn vào ≡ -> Rerun để chạy lại")
