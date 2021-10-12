@@ -7,6 +7,6 @@ while (1):
             tuoi = st.text_input("Nhập tuổi:")
             submitted = st.form_submit_button("Enter")
             if submitted:
-                st.write("dfdsf")
+                st.write('dfdsf')
     except: pass
 
