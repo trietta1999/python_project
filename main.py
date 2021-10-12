@@ -23,7 +23,8 @@ if btn:
 	file_details = st.empty()
 	content = data_file.getvalue()
 	if isinstance(data_file, BytesIO):
-		file_details.image(file)
+		file_details.image(data_file)
+	data_file.close()
 	#else: st.write("None")
 #st.info("Kết thúc chương trình")
 #st.info("Nhấn vào ≡ -> Rerun để chạy lại")
