@@ -5,9 +5,9 @@ while (1):
         with st.form("dfsd"):
             ten = st.text_input("Nhập tên:")
             tuoi = st.text_input("Nhập tuổi:")
-            #btn = st.button("Enter")
+            btn = st.button("Enter")
             #st.text(btn)
-            btn = st.form_submit_button("Enter")
+            #btn = st.form_submit_button("Enter")
             if btn: st.write('on')
             else: st.write('off')
         
