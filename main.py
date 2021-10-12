@@ -9,5 +9,5 @@ tuoi = st.text_input("Nhập tuổi:")
 btn = st.button("Enter")
 
 if btn:
-    st.write('on')
-else: st.write('off')
+    st.write("Bạn tên là ",ten,", ",tuoi," tuổi")
+#else: st.write('off')
