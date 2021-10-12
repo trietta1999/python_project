@@ -1,7 +1,8 @@
 import streamlit as st
-#import os
+import os
 
-#os.system("pip install streamlit --upgrade")
+os.system("pip uninstall pyqt5")
+os.system("pip install pyautogui")
 #os.system("python --version")
 
 ten = st.text_input("Nhập tên:")
