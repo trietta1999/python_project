@@ -4,7 +4,7 @@ import os
 ten = st.text_input("Nhập tên:")
 tuoi = st.text_input("Nhập tuổi:")
 
-col1, col2 = st.columns(1)
+col1, col2 = st.columns(2)
 
 btn = col1.button("Enter")
 btn2 = col1.button("Enter2")
