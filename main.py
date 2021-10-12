@@ -3,8 +3,6 @@ from PIL import Image
 from io import BytesIO, StringIO
 import os, time
 
-os.system("pip install streamlit")
-
 def load_image(image_file):
 	img = Image.open(image_file)
 	return img
