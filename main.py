@@ -8,7 +8,7 @@ col1, col2,col3 = st.columns(3)
 
 with col1: btn = st.button("Enter")
 with col2: btn2 = st.button("Enter2")
-with col3: btn3 = st.button("Enter2")
+with col3: btn3 = st.button("Enter3")
 
 if btn:
     st.write("Bạn tên là %s, %s tuổi" % (ten, tuoi))
