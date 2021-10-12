@@ -2,6 +2,7 @@ import streamlit as st
 
 btn = st.button("Enter")
 st.write(btn)
+'''
 while (1):
     try:
         ten = st.text_input("Nhập tên:")
@@ -11,4 +12,5 @@ while (1):
         #else: st.write('off')
         
     except: pass
+'''
 
