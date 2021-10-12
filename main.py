@@ -1,9 +1,8 @@
 import streamlit as st
 
-while(1):
-  try:
-    a = st.text_input("label goes here:")
-    st.write(a)
-    st.latex("\displaystyle\sum_{i=1}^{10} t_i")
-  except: pass
+try:
+  ten = st.text_input("Nhập tên:")
+  tuoi = st.text_input("Nhập tuổi:")
+  print("Bạn",ten," dễ thương quá,",tuoi," rồi mà còn trẻ lắm!")
+except: pass
 
