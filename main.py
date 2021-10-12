@@ -6,8 +6,8 @@ tuoi = st.text_input("Nhập tuổi:")
 
 col1, col2 = st.columns(2)
 
-btn = col1.st.button("Enter")
-btn2 = col2.st.button("Enter2")
+btn = col1.button("Enter")
+btn2 = col2.button("Enter2")
 
 if btn:
     st.write("Bạn tên là %s, %s tuổi" % (ten, tuoi))
