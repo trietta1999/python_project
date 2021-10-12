@@ -21,7 +21,10 @@ if btn:
 	st.write("Bạn tên là %s, %s tuổi" % (ten, tuoi))
 	data_file = st.file_uploader("Upload", type=['jpg'])
 	file_details = st.empty()
-	content = data_file.getvalue()
+	#content = data_file.getvalue()
+	if not data_file:
+		file_details.info("Please upload a file of type: " + ", ".join(["csv", "png", "jpg"]))
+		return
 	if isinstance(data_file, BytesIO):
 		file_details.image(data_file)
 	data_file.close()
