@@ -1,7 +1,7 @@
 import streamlit as st
 
 while (1):
-    try:
+    #try:
         ten = st.text_input("Nhập tên:")
         tuoi = st.text_input("Nhập tuổi:")
         btn = st.button("Enter")
@@ -10,4 +10,4 @@ while (1):
         #if btn: st.write('on')
         #else: st.write('off')
         
-    except: pass
+    #except: pass
