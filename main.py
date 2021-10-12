@@ -3,9 +3,11 @@ import os
 
 ten = st.text_input("Nhập tên:")
 tuoi = st.text_input("Nhập tuổi:")
-st.layout.columns:
-    btn = st.button("Enter")
-    btn2 = st.button("Enter2")
+
+col1, col2 = st.columns(2)
+
+btn = col1.st.button("Enter")
+btn2 = col2.st.button("Enter2")
 
 if btn:
     st.write("Bạn tên là %s, %s tuổi" % (ten, tuoi))
