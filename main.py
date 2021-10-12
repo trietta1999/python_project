@@ -14,4 +14,4 @@ btn = st.button("Enter")
 if btn:
     st.write("Bạn tên là %s, %s tuổi" % (ten, tuoi))
     st.info("Kết thúc chương trình")
-    st.info("Nhấn vào ⫼ -> Rerun để chạy lại")
+    st.info("Nhấn vào ≡ -> Rerun để chạy lại")
