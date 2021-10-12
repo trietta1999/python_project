@@ -13,4 +13,4 @@ while (1):
     except: pass
     if btn: is_pressed.update({"pressed": True})
     if is_pressed["pressed"]: st.write('on')
-    else: st.write('off')
+    #else: st.write('off')
