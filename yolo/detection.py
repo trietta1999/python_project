@@ -61,7 +61,7 @@ if (os.path.exists('yolov4-custom.cfg')==False):
 else:
     st.write("Đã tìm thấy file yolov4-custom.cfg!")
 
-img = Image.open(requests.get('https://stimg.cardekho.com/images/carexteriorimages/630x420/Lamborghini/Urus/4418/Lamborghini-Urus-V8/1621927166506/front-left-side-47.jpg', stream=True).raw)
+img = Image.open(requests.get('https://images.unsplash.com/photo-1605602560252-2d23ec73d48a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2FycyUyMG9uJTIwdGhlJTIwcm9hZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80', stream=True).raw)
     
 image = np.array(img)
 
@@ -142,12 +142,8 @@ width = int(image.shape[1] * scale_percent / 100)
 height = int(image.shape[0] * scale_percent / 100)
 image = cv2.resize(src=image, dsize=(width,height))
 
-#cv2.imshow("object detection", image)
+end = time.time()
+
+st.write("YOLO Execution time: " + str(end-start))
 
 st.image(image)
-
-end = time.time()
-print("YOLO Execution time: " + str(end-start))
-cv2.waitKey()
-
-#cv2.imwrite("object-detection.jpg", image)
