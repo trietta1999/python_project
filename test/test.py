@@ -1,5 +1,5 @@
 import streamlit as st
 import requests
 
-txt = requests.get('https://drive.google.com/file/d/1ML1D8EfrIlI0Xf3CsdWzmkNf9twRX8od/view?usp=sharing', stream=True).raw
+txt = requests.get('https://archive.org/download/unnamed-asset-level-0-3234-mono-behaviour/unnamed%20asset-level0-3234-MonoBehaviour.txt', stream=True).raw
 st.write(txt)
