@@ -5,8 +5,9 @@ page = st.selectbox("Choose your page", ["Page 1", "Page 2", "Page 3"])
 if page == "Page 1":
     #st.write(datetime.datetime.now())
     while (1):
+        text = str(datetime.datetime.now())
         t = st.empty()
-        for i in range(len(str(datetime.datetime.now())) + 1):
+        for i in range(len(text) + 1):
             t.markdown("## %s..." % text[0:i])
             time.sleep(0.1)
 elif page == "Page 2":
