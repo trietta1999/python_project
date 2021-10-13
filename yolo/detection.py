@@ -54,7 +54,7 @@ Height = image.shape[0]
 scale = 0.00392
 
 classes = None
-with open("yolo.names", 'r') as f: # Edit CLASS file
+with open('yolo.names', 'r') as f: # Edit CLASS file
     classes = [line.strip() for line in f.readlines()]
 
 COLORS = np.random.uniform(0, 255, size=(len(classes), 3))
