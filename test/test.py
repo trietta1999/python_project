@@ -9,3 +9,4 @@ with open('test.csv','wb') as f:
   f.write(txt)
 
 df = pd.read_csv('test.csv')
+st.print(df['x_min'])
