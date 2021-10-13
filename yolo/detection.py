@@ -1,9 +1,7 @@
 # Import libraries
-import cv2
 import numpy as np
-import time
 import streamlit as st
-import requests, os
+import requests, os, cv2, time
 import pandas as pd
 from PIL import Image
 
@@ -44,6 +42,15 @@ if (os.path.exists('yolov4-custom_best.weights')==False):
     f.close()
 else:
     st.write("Đã tìm thấy file weights!")
+    
+if (os.path.exists('yolo.names')==False):
+    st.write("Đang lấy file yolo.names...")
+    w = requests.get('https://archive.org/download/yolo_20211013/yolo.names').content
+    with open('yolo.names','wb') as f:
+        st.write(f.write(w))
+    f.close()
+else:
+    st.write("Đã tìm thấy file yolo.names!")
 
 img = Image.open(requests.get('https://stimg.cardekho.com/images/carexteriorimages/630x420/Lamborghini/Urus/4418/Lamborghini-Urus-V8/1621927166506/front-left-side-47.jpg', stream=True).raw)
     
@@ -54,12 +61,12 @@ Height = image.shape[0]
 scale = 0.00392
 
 classes = None
-with open('/yolo.names', 'r') as f: # Edit CLASS file
+with open('yolo.names', 'r') as f: # Edit CLASS file
     classes = [line.strip() for line in f.readlines()]
 
 COLORS = np.random.uniform(0, 255, size=(len(classes), 3))
 
-net = cv2.dnn.readNet("/yolov4-custom_best.weights", "/yolov4-custom.cfg") # Edit WEIGHT and CONFIC file
+net = cv2.dnn.readNet("yolov4-custom_best.weights", "yolov4-custom.cfg") # Edit WEIGHT and CONFIC file
 blob = cv2.dnn.blobFromImage(image, scale, (416, 416), (0, 0, 0), True, crop=False)
 
 net.setInput(blob)
