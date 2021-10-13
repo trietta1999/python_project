@@ -38,9 +38,8 @@ if page == "Trang chủ":
         
     rerun(1)
 
-elif page == "Page 2":
-    st.write("Display details of page 2")
-    b = st.button("Button")
+elif page == "Điều khiển":
+    sl = st.slider("pk",0, 3)
 
 elif page == "Page 3":
     st.write("Display details of page 3")
