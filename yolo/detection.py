@@ -4,6 +4,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import glob
 import time
+import streamlit as st
+import requests, os
+import pandas as pd
+from PIL import Image
 
 def get_output_layers(net):
     layer_names = net.getLayerNames()
@@ -34,19 +38,22 @@ def savePredict(name, text):
         groundTruth.write(text)
         groundTruth.close()
 
+if (os.path.exists('yolov4-custom_best.weights')==False):
+    st.write("Đang lấy file weights...")
+    w = requests.get('https://archive.org/download/yolov4-custom_best/yolov4-custom_best.weights').content
+    with open('yolov4-custom_best.weights','wb') as f:
+        st.write(f.write(w))
+    f.close()
+else:
+    st.write("Đã tìm thấy file weights!")
 
+img = Image.open(requests.get('https://stimg.cardekho.com/images/carexteriorimages/630x420/Lamborghini/Urus/4418/Lamborghini-Urus-V8/1621927166506/front-left-side-47.jpg', stream=True).raw)
 
-
-
-image = cv2.imread("car_test2.jpg")
-#image = cv2.imread("testing_images/vid_5_31700.jpg")
-
-
+image = cv2.imread(np.array(img))
 
 Width = image.shape[1]
 Height = image.shape[0]
 scale = 0.00392
-
 
 classes = None
 with open("yolo.names", 'r') as f: # Edit CLASS file
@@ -121,12 +128,12 @@ width = int(image.shape[1] * scale_percent / 100)
 height = int(image.shape[0] * scale_percent / 100)
 image = cv2.resize(src=image, dsize=(width,height))
 
-cv2.imshow("object detection", image)
+#cv2.imshow("object detection", image)
 
+st.image(image)
 
 end = time.time()
 print("YOLO Execution time: " + str(end-start))
 cv2.waitKey()
 
-cv2.imwrite("object-detection.jpg", image)
-cv2.destroyAllWindows()
+#cv2.imwrite("object-detection.jpg", image)
