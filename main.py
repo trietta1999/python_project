@@ -4,17 +4,16 @@ from io import BytesIO, StringIO
 from typing import Dict
 import os, time
 
-from firebase import firebase
-firebase = firebase.FirebaseApplication('https://smart-steward-default-rtdb.firebaseio.com', None)
-result = firebase.get('/cs', None)
-st.write(result)
+# from firebase import firebase
+# firebase = firebase.FirebaseApplication('https://smart-steward-default-rtdb.firebaseio.com', None)
+# result = firebase.get('/cs', None)
+# st.write(result)
+# firebase.put("/","cs","1")
 
-firebase.put("/","cs","1")
-
-@st.cache(allow_output_mutation=True)
-def get_static_store() -> Dict:
-	"""This dictionary is initialized once and can be used to store the files uploaded"""
-	return {}
+# @st.cache(allow_output_mutation=True)
+# def get_static_store() -> Dict:
+# 	"""This dictionary is initialized once and can be used to store the files uploaded"""
+# 	return {}
 
 def load_image(image_file):
 	img = Image.open(image_file)
