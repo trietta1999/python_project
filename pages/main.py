@@ -24,7 +24,7 @@ if page == "Trang chủ":
         #st.markdown('<p style="font-family:sans-serif; color:Red; font-size: 50px;">00</p>', unsafe_allow_html=True)
         #st.markdown("**Nhiệt độ (°C)**")
         #st.write("00")
-        st.metric("**Nhiệt độ (°C)**",1.2)
+        st.metric("Nhiệt độ (°C)",0,1.2)
     with col2:
         st.markdown("**Độ ẩm (%RH)**")
         st.write("00")
