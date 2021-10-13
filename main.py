@@ -4,6 +4,11 @@ from io import BytesIO, StringIO
 from typing import Dict
 import os, time
 
+from firebase import firebase
+firebase = firebase.FirebaseApplication('https://smart-steward-default-rtdb.firebaseio.com', None)
+result = firebase.get('/runesp8266', None)
+st.write(result)
+
 @st.cache(allow_output_mutation=True)
 def get_static_store() -> Dict:
 	"""This dictionary is initialized once and can be used to store the files uploaded"""
