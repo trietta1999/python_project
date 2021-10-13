@@ -6,7 +6,7 @@ import os, time
 
 from firebase import firebase
 firebase = firebase.FirebaseApplication('https://smart-steward-default-rtdb.firebaseio.com', None)
-result = firebase.get('/runesp8266', None)
+result = firebase.get('/run8266', None)
 st.write(result)
 
 @st.cache(allow_output_mutation=True)
