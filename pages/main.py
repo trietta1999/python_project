@@ -5,11 +5,7 @@ page = st.selectbox("Choose your page", ["Page 1", "Page 2", "Page 3"])
 if page == "Page 1":
     #st.write(datetime.datetime.now())
     while (1):
-        text = str(datetime.datetime.now())
-        t = st.empty()
-        for i in range(len(text) + 1):
-            t.markdown("## %s..." % text[0:i])
-            time.sleep(0.1)
+        st.text_on_same_line(datetime.datetime.now())  # need to incrementally display a new word at every step
 elif page == "Page 2":
     st.write("Display details of page 2")
     b = st.button("Button")
