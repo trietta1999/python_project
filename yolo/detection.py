@@ -50,10 +50,10 @@ download('https://archive.org/download/yolo_20211013/yolo.names', 'yolo.names')
     
 #img = Image.open(requests.get('https://images.unsplash.com/photo-1605602560252-2d23ec73d48a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2FycyUyMG9uJTIwdGhlJTIwcm9hZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80', stream=True).raw)
 
-img = st.file_uploader("Upload Image",type=['jpg'])
-
-#image = np.array(img)
-image = cv2.imread(img)
+img_l = st.file_uploader("Upload Image",type=['jpg'])
+img = Image.open(img_l)
+image = np.array(img)
+#image = cv2.imread(img)
 
 Width = image.shape[1]
 Height = image.shape[0]
