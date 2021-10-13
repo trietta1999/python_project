@@ -1,8 +1,6 @@
 # Import libraries
 import cv2
-import matplotlib.pyplot as plt
 import numpy as np
-import glob
 import time
 import streamlit as st
 import requests, os
