@@ -17,10 +17,11 @@ if page == "Trang chủ":
     
     with col1:
         st.write("Nhiệt độ (°C)")
-        b_nhietdo = st.button("00")
+        st.write("00")
+        
     with col2:
         st.write("Độ ẩm (%RH)")
-        b_doam = st.button("00")
+        st.write("00")
     
     rerun(1)
 
