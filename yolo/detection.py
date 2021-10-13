@@ -34,36 +34,26 @@ def savePredict(name, text):
         groundTruth.write(text)
         groundTruth.close()
 
-if (os.path.exists('yolov4-custom_best.weights')==False):
-    st.write("Đang lấy file weights...")
-    w = requests.get('https://archive.org/download/yolov4-custom_best/yolov4-custom_best.weights').content
-    with open('yolov4-custom_best.weights','wb') as f:
-        st.write(f.write(w))
-    f.close()
-else:
-    st.write("Đã tìm thấy file weights!")
-    
-if (os.path.exists('yolo.names')==False):
-    st.write("Đang lấy file yolo.names...")
-    w = requests.get('https://archive.org/download/yolo_20211013/yolo.names').content
-    with open('yolo.names','wb') as f:
-        st.write(f.write(w))
-    f.close()
-else:
-    st.write("Đã tìm thấy file yolo.names!")
-    
-if (os.path.exists('yolov4-custom.cfg')==False):
-    st.write("Đang lấy file yolov4-custom.cfg...")
-    w = requests.get('https://archive.org/download/yolov4-custom/yolov4-custom.cfg').content
-    with open('yolov4-custom.cfg','wb') as f:
-        st.write(f.write(w))
-    f.close()
-else:
-    st.write("Đã tìm thấy file yolov4-custom.cfg!")
+def download(url, name):      
+    if (os.path.exists('yolov4-custom_best.weights')==False):
+        st.write("Đang lấy file %s..." % name)
+        w = requests.get(url).content
+        with open(name,'wb') as f:
+            st.write(f.write(w))
+        f.close()
+    else:
+        st.write("Đã tìm thấy file %s!" % name)
 
-img = Image.open(requests.get('https://images.unsplash.com/photo-1605602560252-2d23ec73d48a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2FycyUyMG9uJTIwdGhlJTIwcm9hZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80', stream=True).raw)
+download('https://archive.org/download/yolov4-custom_best/yolov4-custom_best.weights', 'yolov4-custom_best.weights')
+download('https://archive.org/download/yolov4-custom/yolov4-custom.cfg', 'yolov4-custom.cfg')
+download('https://archive.org/download/yolo_20211013/yolo.names', 'yolo.names')
     
-image = np.array(img)
+#img = Image.open(requests.get('https://images.unsplash.com/photo-1605602560252-2d23ec73d48a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2FycyUyMG9uJTIwdGhlJTIwcm9hZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80', stream=True).raw)
+
+img = st.file_uploader("Upload Image",type=['jpg'])
+
+#image = np.array(img)
+image = cv2.imread(img)
 
 Width = image.shape[1]
 Height = image.shape[0]
