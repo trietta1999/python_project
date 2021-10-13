@@ -9,4 +9,4 @@ with open('test.csv','wb') as f:
   f.write(txt)
 
 df = pd.read_csv('test.csv')
-st.write(df['x_min'])
+st.write(df['xmin'])
