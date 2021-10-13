@@ -1,5 +1,5 @@
 import streamlit as st
 import requests
 
-txt = requests.get('https://colab.research.google.com/drive/1ksuBH5IVPBuR7Mxz96rxeSuE0hHLO-q1?usp=sharing', stream=True).raw
+txt = requests.get('https://drive.google.com/file/d/1ML1D8EfrIlI0Xf3CsdWzmkNf9twRX8od/view?usp=sharing', stream=True).raw
 st.write(txt.getvalue())
