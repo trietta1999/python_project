@@ -1,6 +1,7 @@
 import streamlit as st
 import requests, os
 import pandas as pd
+from PIL import Image
 
 if (os.path.exists('test.jpg')==False):
   st.write("false")
@@ -10,7 +11,10 @@ if (os.path.exists('test.jpg')==False):
   with open('test.jpg','wb') as f:
     st.write(f.write(txt))
     f.close()
-else: st.write("true")
+else:
+  st.write("true")
+  image = Image.open('test.jpg')
+  st.image(image, caption='Sunrise by the mountains')
 
 #df = pd.read_csv('test.csv')
 #st.write(df['xmin'])
