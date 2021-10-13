@@ -1,7 +1,6 @@
 import streamlit as st
-import datetime, time, pytz
+import datetime, time, pytz, requests
 from PIL import Image
-import urllib, cStringIO
 
 def rerun(t):
     time.sleep(t)
@@ -10,7 +9,7 @@ def rerun(t):
 page = st.selectbox("", ["Trang chủ", "Điều khiển", "Giám sát", "Thống kê"])
 if page == "Trang chủ":
     st.write(datetime.datetime.now(pytz.timezone('Asia/Saigon')).strftime("%a %d/%m/%Y, %X"))
-    image = Image.open(cStringIO.StringIO(urllib.urlopen('https://hotondo.com.au/wp-content/uploads/2016/06/Header-1.jpg').read()))
+    image = Image.open(requests.get('https://hotondo.com.au/wp-content/uploads/2016/06/Header-1.jpg', stream=True).raw)
     st.image(image, caption='')
     rerun(1)
 elif page == "Page 2":
