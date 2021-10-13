@@ -16,7 +16,7 @@ if page == "Trang chủ":
     col1, col2 = st.columns(2)
     
     with col1:
-        st.header("Nhiệt độ (°C)")
+        st.write("Nhiệt độ (°C)")
         b_nhietdo = st.button("00")
     
     rerun(1)
