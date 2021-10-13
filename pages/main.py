@@ -15,11 +15,11 @@ if page == "Trang chủ":
     
     col1, col2, col3, col4, col5 = st.columns(5)
     
-    col1.write("sdsad")
-    col3.write("sadsad")
-    col5.write("sadasasdas")
+    col1.write("")
+    col3.write("")
+    col5.write("")
     
-    with col1:
+    with col2:
         st.write("Nhiệt độ (°C)")
         b_nhietdo = st.button("00")
     
