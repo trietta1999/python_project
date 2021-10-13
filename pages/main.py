@@ -1,48 +1,8 @@
-import os
-import pickle
-import streamlit as st
-
-class State:
-    def __init__(self, path='state.pickle', default_state_class=dict):
-        self.path = path
-        self.default_state_class = default_state_class
-
-    def load(self):
-        if os.path.exists(self.path):
-            with open(self.path, 'rb') as inf:
-                self.state = pickle.load(inf)
-        else:
-            self.state = self.default_state_class()
-
-    def get_state(self):
-        return self.state
-
-    def save(self):
-        with open(self.path, 'wb') as outf:
-            pickle.dump(self.state, outf)
-
-def rerun():
-    raise st.script_runner.RerunException(st.script_request_queue.RerunData(None))
-
-def app():
-    store = State()
-    store.load()
-
-    name = store.get_state().get('name', None)
-    if name:
-        st.text(f'Hello {name}')
-    else:
-        st.text(f'Please enter your name')
-        name_input = st.text_input('your name')
-        name = name_input
-
-        if name != '':
-            store.get_state()['name'] = name
-
-        store.save()
-        next_page = st.button('Next page')
-        if next_page:
-            rerun()
-
-if __name__ == "__main__":
-    app()
+import streamlit as st# Create a page dropdown 
+page = st.selectbox("Choose your page", ["Page 1", "Page 2", "Page 3"])
+if page == "Page 1":
+    # Display details of page 1
+elif page == "Page 2":
+    # Display details of page 2
+elif page == "Page 3":
+    # Display details of page 3
