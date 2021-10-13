@@ -24,11 +24,11 @@ if page == "Trang chủ":
         st.write("Độ ẩm (%RH)")
         st.write("00")
         
-     with col3:
+    with col3:
         st.write("Thiết bị đang bật")
         st.write("0")
         
-     with col4:
+    with col4:
         st.write("Công suất tiêu thụ (Wh)")
         st.write("0.00")
         
