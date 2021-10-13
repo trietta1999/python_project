@@ -13,7 +13,11 @@ if page == "Trang chủ":
     image = Image.open(requests.get('https://hotondo.com.au/wp-content/uploads/2016/06/Header-1.jpg', stream=True).raw)
     st.image(image, caption='')
     
-    col1, col2 = st.beta_columns(2)
+    col1, col2, col3, col4, col5 = st.columns(5)
+    
+    col1.write("")
+    col3.write("")
+    col5.write("")
     
     with col1:
         st.write("Nhiệt độ (°C)")
