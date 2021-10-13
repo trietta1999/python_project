@@ -27,7 +27,8 @@ if page == "Trang chủ":
      with col3:
         st.write("Thiết bị đang bật")
         st.write("0")
-     with col2:
+        
+     with col4:
         st.write("Công suất tiêu thụ (Wh)")
         st.write("0.00")
         
