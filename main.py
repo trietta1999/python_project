@@ -9,7 +9,7 @@ firebase = firebase.FirebaseApplication('https://smart-steward-default-rtdb.fire
 result = firebase.get('/cs', None)
 st.write(result)
 
-firebase.put("/","cs","0.99")
+firebase.put("/","cs","1")
 
 @st.cache(allow_output_mutation=True)
 def get_static_store() -> Dict:
