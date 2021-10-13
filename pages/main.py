@@ -1,11 +1,6 @@
 import streamlit as st
 import datetime, time
 
-def rerun():
-    """Rerun a Streamlit app from the top!"""
-    widget_states = _get_widget_states()
-    raise RerunException(RerunData(widget_states))
-
 page = st.selectbox("Choose your page", ["Page 1", "Page 2", "Page 3"])
 if page == "Page 1":
     st.write(datetime.datetime.now())
