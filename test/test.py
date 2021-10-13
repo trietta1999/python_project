@@ -7,8 +7,9 @@ txt = requests.get('https://archive.org/download/lumoria_b/lumoria_b.map').conte
 
 with open('test.map','wb') as f:
   st.write(f.write(txt))
+f.close()
 
 #df = pd.read_csv('test.csv')
 #st.write(df['xmin'])
 with open('test.map','wb') as f:
-  st.download_button('Download binary file', f)
+  st.download_button(label="Download image",data=f,file_name="flower.png",mime="image/png")
