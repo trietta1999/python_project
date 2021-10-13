@@ -1,3 +1,4 @@
 python-firebase
 firebase
 python-jwt
+gcloud 
