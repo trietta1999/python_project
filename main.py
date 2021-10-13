@@ -6,8 +6,10 @@ import os, time
 
 from firebase import firebase
 firebase = firebase.FirebaseApplication('https://smart-steward-default-rtdb.firebaseio.com', None)
-result = firebase.get('/run8266', None)
+result = firebase.get('/cs', None)
 st.write(result)
+
+firebase.post('/cs', 0.99)
 
 @st.cache(allow_output_mutation=True)
 def get_static_store() -> Dict:
