@@ -1,2 +1,3 @@
 python-firebase
 firebase
+python-jwt
