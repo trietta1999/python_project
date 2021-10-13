@@ -51,6 +51,15 @@ if (os.path.exists('yolo.names')==False):
     f.close()
 else:
     st.write("Đã tìm thấy file yolo.names!")
+    
+if (os.path.exists('yolov4-custom.cfg')==False):
+    st.write("Đang lấy file yolov4-custom.cfg...")
+    w = requests.get('https://archive.org/download/yolov4-custom/yolov4-custom.cfg').content
+    with open('yolov4-custom.cfg','wb') as f:
+        st.write(f.write(w))
+    f.close()
+else:
+    st.write("Đã tìm thấy file yolov4-custom.cfg!")
 
 img = Image.open(requests.get('https://stimg.cardekho.com/images/carexteriorimages/630x420/Lamborghini/Urus/4418/Lamborghini-Urus-V8/1621927166506/front-left-side-47.jpg', stream=True).raw)
     
