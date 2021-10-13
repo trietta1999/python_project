@@ -108,8 +108,8 @@ for out in outs:
             y = center_y - h / 2
             #print(w,h,x,y)
             class_ids.append(class_id)
-            """if confidence < 0.6:
-                class_ids.append(2)""" #change
+            #if confidence < 0.6:
+            #    class_ids.append(2)
             confidences.append(float(confidence))
             #print(confidence)
             #print(class_ids)
@@ -132,9 +132,9 @@ for i in indices:
     Result += textpredict
     #print(Result)
 
-file = open("testt.txt","w+")
-file.write(Result)
-file.close()
+#file = open("testt.txt","w+")
+#file.write(Result)
+#file.close()
 #savePredict(pathSave, name, textPre) # Doi thanh con tro ve dia chi cua anh
     
 scale_percent = 50
