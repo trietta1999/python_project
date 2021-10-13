@@ -39,7 +39,7 @@ def download(url, name):
         st.write("Đang lấy file %s..." % name)
         w = requests.get(url).content
         with open(name,'wb') as f:
-            st.write(f.write(w))
+            f.write(w)
         f.close()
     else:
         st.write("Đã tìm thấy file %s!" % name)
