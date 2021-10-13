@@ -10,6 +10,7 @@ page = st.selectbox("", ["Trang chủ", "Điều khiển", "Giám sát", "Thốn
 
 if page == "Trang chủ":
     st.write(datetime.datetime.now(pytz.timezone('Asia/Saigon')).strftime("%a %d/%m/%Y, %X"))
+    st.markdown('<p style="font-family:sans-serif; font-size: 30px;">QUẢN GIA THÔNG MINH(°C)</p>', unsafe_allow_html=True)
     image = Image.open(requests.get('https://hotondo.com.au/wp-content/uploads/2016/06/Header-1.jpg', stream=True).raw)
     st.image(image, caption='')
     
@@ -21,15 +22,15 @@ if page == "Trang chủ":
         st.markdown("**Nhiệt độ (°C)**")
         st.write("00")
     with col2:
-        st.write("Độ ẩm (%RH)")
+        st.markdown("**Độ ẩm (%RH)**")
         st.write("00")
         
     with col3:
-        st.write("Thiết bị đang bật")
+        st.markdown("**Thiết bị đang bật**")
         st.write("0")
         
     with col4:
-        st.write("Công suất tiêu thụ (Wh)")
+        st.markdown("**Công suất tiêu thụ (Wh)**")
         st.write("0.00")
         
     rerun(1)
