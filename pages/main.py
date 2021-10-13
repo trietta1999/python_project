@@ -10,15 +10,8 @@ st.markdown('<style>body{background-color: Blue;}</style>',unsafe_allow_html=Tru
 
 page = st.selectbox("", ["Trang chủ", "Điều khiển", "Giám sát", "Thống kê"])
 
-dt_b = 0
-
 if page == "Trang chủ":
-    dt = datetime.datetime.now(pytz.timezone('Asia/Saigon'))
-    st.write(dt.strftime("%a %d/%m/%Y, %X"))
-    
-    if (dt.second != dt_b):
-        dt_b = dt.second
-        rerun(0.001)
+    st.write(datetime.datetime.now(pytz.timezone('Asia/Saigon')).strftime("%a %d/%m/%Y, %X"))
     
     #st.markdown('<p style="font-family:sans-serif; font-size: 40px;"><font color="#ff6600"><b>QUẢN GIA THÔNG MINH</b><br></p>', unsafe_allow_html=True)
     st.markdown('<p style="font-family:sans-serif; font-size: 40px;"><b>QUẢN GIA THÔNG MINH</b><br></p>', unsafe_allow_html=True)
@@ -47,6 +40,8 @@ if page == "Trang chủ":
         #st.markdown("**Công suất tiêu thụ (Wh)**")
         #st.write("0.00")
         st.metric("Công suất tiêu thụ (Wh)",0)
+        
+    rerun(1)
 
 elif page == "Điều khiển":
     col1, col2 = st.columns(2)
