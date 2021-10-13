@@ -47,7 +47,7 @@ else:
 
 img = Image.open(requests.get('https://stimg.cardekho.com/images/carexteriorimages/630x420/Lamborghini/Urus/4418/Lamborghini-Urus-V8/1621927166506/front-left-side-47.jpg', stream=True).raw)
 
-image = cv2.imread(np.array(img))
+image = cv2.imread(img)
 
 Width = image.shape[1]
 Height = image.shape[0]
