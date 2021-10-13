@@ -9,7 +9,7 @@ def time_update():
 page = st.selectbox("Choose your page", ["Page 1", "Page 2", "Page 3"])
 if page == "Page 1":
     t = threading.Thread(target=time_update)
-    t = start()
+    t.start()
 elif page == "Page 2":
     st.write("Display details of page 2")
     b = st.button("Button")
