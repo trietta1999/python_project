@@ -16,13 +16,21 @@ if page == "Trang chủ":
     col1, col2, col3, col4= st.columns(4)
     
     with col1:
-        st.markdown('<p style="font-family:sans-serif; font-size: 30px;">Nhiệt độ (°C)</p>', unsafe_allow_html=True)
-        st.markdown('<p style="font-family:sans-serif; color:Red; font-size: 50px;">00</p>', unsafe_allow_html=True)
-        
+        #st.markdown('<p style="font-family:sans-serif; font-size: 30px;">Nhiệt độ (°C)</p>', unsafe_allow_html=True)
+        #st.markdown('<p style="font-family:sans-serif; color:Red; font-size: 50px;">00</p>', unsafe_allow_html=True)
+        st.write("Nhiệt độ (°C)")
+        st.write("00")
     with col2:
         st.write("Độ ẩm (%RH)")
         st.write("00")
-    
+        
+     with col3:
+        st.write("Thiết bị đang bật")
+        st.write("0")
+     with col2:
+        st.write("Công suất tiêu thụ (Wh)")
+        st.write("0.00")
+        
     rerun(1)
 
 elif page == "Page 2":
