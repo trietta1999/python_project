@@ -18,7 +18,7 @@ if page == "Trang chủ":
     with col1:
         #st.markdown('<p style="font-family:sans-serif; font-size: 30px;">Nhiệt độ (°C)</p>', unsafe_allow_html=True)
         #st.markdown('<p style="font-family:sans-serif; color:Red; font-size: 50px;">00</p>', unsafe_allow_html=True)
-        st.write("Nhiệt độ (°C)")
+        st.markdown("**Nhiệt độ (°C)**")
         st.write("00")
     with col2:
         st.write("Độ ẩm (%RH)")
