@@ -15,9 +15,9 @@ if page == "Trang chủ":
     
     col1, col2, col3, col4, col5 = st.columns(5)
     
-    col1.write("")
-    col3.write("")
-    col5.write("")
+    col1.write("\t\t\t\t\t")
+    col3.write("\t\t\t\t\t")
+    col5.write("\t\t\t\t\t")
     
     with col1:
         st.write("Nhiệt độ (°C)")
