@@ -46,12 +46,8 @@ else:
     st.write("Đã tìm thấy file weights!")
 
 img = Image.open(requests.get('https://stimg.cardekho.com/images/carexteriorimages/630x420/Lamborghini/Urus/4418/Lamborghini-Urus-V8/1621927166506/front-left-side-47.jpg', stream=True).raw)
-
-with open('test.jpg','wb') as f:
-    st.write(f.write(img))
-    f.close()
     
-image = cv2.imread('test.jpg')
+image = np.array(img)
 
 Width = image.shape[1]
 Height = image.shape[0]
