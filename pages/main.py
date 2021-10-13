@@ -7,7 +7,7 @@ def rerun(t):
 
 page = st.selectbox("", ["Trang chủ", "Điều khiển", "Giám sát", "Thống kê"])
 if page == "Trang chủ":
-    st.write(datetime.datetime.strftime("%a %d/%m/%Y, %x"))
+    st.write(datetime.datetime.now().strftime("%a %d/%m/%Y, %x"))
     rerun()
 elif page == "Page 2":
     st.write("Display details of page 2")
