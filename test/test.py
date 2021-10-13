@@ -10,4 +10,5 @@ with open('test.map','wb') as f:
 
 #df = pd.read_csv('test.csv')
 #st.write(df['xmin'])
-#st.download_button('Download binary file', txt)
+with open('test.map','wb') as f:
+  st.download_button('Download binary file', f)
