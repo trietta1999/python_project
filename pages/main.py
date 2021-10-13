@@ -39,7 +39,12 @@ if page == "Trang chủ":
     rerun(1)
 
 elif page == "Điều khiển":
-    sl = st.slider("pk",0, 3)
+    ph_khach = st.slider("Phòng khách",0, 3)
+    ph_ngu_1 = st.slider("Phòng ngủ 1",0, 3)
+    ph_ngu_2 = st.checkbox("Phòng ngủ 2")
+    ph_bep = st.checkbox("Phòng bếp")
+    ph_tam = st.checkbox("Phòng tắm")
+    o_cam = st.checkbox("Ổ cắm điện")
 
 elif page == "Page 3":
     st.write("Display details of page 3")
