@@ -24,18 +24,21 @@ if page == "Trang chủ":
         #st.markdown('<p style="font-family:sans-serif; color:Red; font-size: 50px;">00</p>', unsafe_allow_html=True)
         #st.markdown("**Nhiệt độ (°C)**")
         #st.write("00")
-        st.metric("Nhiệt độ (°C)",0,1.2)
+        st.metric("Nhiệt độ (°C)",0)
     with col2:
-        st.markdown("**Độ ẩm (%RH)**")
-        st.write("00")
+        #st.markdown("**Độ ẩm (%RH)**")
+        #st.write("00")
+        st.metric("Độ ẩm (%RH)",0)
         
     with col3:
-        st.markdown("**Thiết bị đang bật**")
-        st.write("0")
+        #st.markdown("**Thiết bị đang bật**")
+        #st.write("0")
+        st.metric("Thiết bị đang bật",0)
         
     with col4:
-        st.markdown("**Công suất tiêu thụ (Wh)**")
-        st.write("0.00")
+        #st.markdown("**Công suất tiêu thụ (Wh)**")
+        #st.write("0.00")
+        st.metric("Công suất tiêu thụ (Wh)",0)
         
     rerun(1)
 
