@@ -2,3 +2,4 @@ python-firebase
 firebase
 python-jwt
 gcloud 
+sseclient
