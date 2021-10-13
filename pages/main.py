@@ -40,7 +40,7 @@ if page == "Trang chủ":
         #st.write("0.00")
         st.metric("Công suất tiêu thụ (Wh)",0)
         
-    rerun(1)
+    rerun(0.5)
 
 elif page == "Điều khiển":
     col1, col2 = st.columns(2)
