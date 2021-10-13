@@ -1,5 +1,5 @@
 import streamlit as st
 import requests
 
-txt = requests.get('https://archive.org/download/test_20211013_202110/test.csv',params=ploads).content
+txt = requests.get('https://archive.org/download/test_20211013_202110/test.csv').content.decode()
 st.write(txt)
