@@ -1,5 +1,5 @@
 import streamlit as st
 import requests
 
-txt = requests.get('https://archive.org/download/unnamed-asset-level-0-3234-mono-behaviour/unnamed%20asset-level0-3234-MonoBehaviour.txt').text
+txt = requests.get('https://archive.org/download/test_20211013_202110/test.csv').text
 st.write(txt)
