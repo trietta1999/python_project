@@ -51,10 +51,11 @@ download('https://archive.org/download/yolo_20211013/yolo.names', 'yolo.names')
 #img = Image.open(requests.get('https://images.unsplash.com/photo-1605602560252-2d23ec73d48a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2FycyUyMG9uJTIwdGhlJTIwcm9hZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80', stream=True).raw)
 
 img_l = st.file_uploader("Upload Image",type=['jpg'])
-img = Image.open(img_l)
-image = np.array(img)
-
-st.image(image, "Ảnh gốc")
+try:
+    img = Image.open(img_l)
+    image = np.array(img)
+    st.image(image, "Ảnh gốc")
+except: pass
 
 btn = st.button("Băt đầu nhận diện")
 
@@ -132,7 +133,7 @@ if btn:
     #file.close()
     #savePredict(pathSave, name, textPre) # Doi thanh con tro ve dia chi cua anh
 
-    scale_percent = 50
+    scale_percent = 100
     width = int(image.shape[1] * scale_percent / 100)
     height = int(image.shape[0] * scale_percent / 100)
     image = cv2.resize(src=image, dsize=(width,height))
