@@ -35,7 +35,7 @@ def savePredict(name, text):
         groundTruth.close()
 
 def download(url, name):      
-    if (os.path.exists('yolov4-custom_best.weights')==False):
+    if (os.path.exists(name)==False):
         st.write("Đang lấy file %s..." % name)
         w = requests.get(url).content
         with open(name,'wb') as f:
