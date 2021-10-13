@@ -27,7 +27,7 @@ btn = st.button("Enter")
 # btn1 = col1.button("Enter1")
 # btn2 = col2.button("Enter2")
 # btn3 = col3.button("Enter3")
-static_store = get_static_store()
+# static_store = get_static_store()
 
 if btn:
 	st.write("Bạn tên là %s, %s tuổi" % (ten, tuoi))
