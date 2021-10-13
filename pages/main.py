@@ -6,6 +6,8 @@ def rerun(t):
     time.sleep(t)
     raise st.script_runner.RerunException(st.script_request_queue.RerunData(None))
 
+st.markdown('<style>body{background-color: Blue;}</style>',unsafe_allow_html=True)    
+
 page = st.selectbox("", ["Trang chủ", "Điều khiển", "Giám sát", "Thống kê"])
 
 if page == "Trang chủ":
