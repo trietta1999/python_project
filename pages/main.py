@@ -1,5 +1,6 @@
 import streamlit as st
 import datetime, time, pytz
+from PIL import Image
 
 def rerun(t):
     time.sleep(t)
@@ -8,6 +9,8 @@ def rerun(t):
 page = st.selectbox("", ["Trang chủ", "Điều khiển", "Giám sát", "Thống kê"])
 if page == "Trang chủ":
     st.write(datetime.datetime.now(pytz.timezone('Asia/Saigon')).strftime("%a %d/%m/%Y, %X"))
+    image = Image.open('https://hotondo.com.au/wp-content/uploads/2016/06/Header-1.jpg')
+    st.image(image, caption='')
     rerun(1)
 elif page == "Page 2":
     st.write("Display details of page 2")
