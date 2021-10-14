@@ -2,8 +2,12 @@ import streamlit as st
 import sys  
 
 try:
-    sys.path.remove("pages") 
+    sys.path.remove("pages")
+except: pass
+try:
     sys.path.remove("yolo")
+except: pass
+try:
     del sys.modules["main", "detection"]
 except: pass
 
