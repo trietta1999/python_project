@@ -1,5 +1,5 @@
 import streamlit as st
-import datetime, time, pytz, requests
+import datetime, time, pytz, requests, os
 from PIL import Image
 
 def rerun(t):
@@ -10,6 +10,10 @@ def main():
     st.markdown('<style>body{background-color: Blue;}</style>',unsafe_allow_html=True)    
 
     page = st.selectbox("", ["Trang chủ", "Điều khiển", "Giám sát", "Thống kê"])
+    
+    logout = st.button("Đăng xuất")
+    if logout:
+        os.remove("loginok.log")
 
     if page == "Trang chủ":
         st.write(datetime.datetime.now(pytz.timezone('Asia/Saigon')).strftime("%a %d/%m/%Y, %X"))
