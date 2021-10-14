@@ -46,7 +46,7 @@ def main():
             #st.write("0.00")
             st.metric("Công suất tiêu thụ (Wh)",0)
 
-        #rerun(1)
+        rerun(1)
 
     elif page == "Điều khiển":
         col1, col2 = st.columns(2)
