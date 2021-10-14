@@ -1,3 +1,3 @@
-from pages import main
+import pages.main as m
 
-main.main()
+m.main()
