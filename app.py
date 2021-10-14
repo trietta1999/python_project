@@ -14,4 +14,4 @@ import sys, os
 #     from detection import main
 #     main()
 
-os.system("ls")
+os.system("cd yolo & ls")
