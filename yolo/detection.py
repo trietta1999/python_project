@@ -4,7 +4,7 @@ import streamlit as st
 import requests, os, cv2, time
 import pandas as pd
 from PIL import Image
-st.write("hhhh")
+
 classes = None
 COLORS = None
 class_ids = []
@@ -154,4 +154,5 @@ def main():
         st.image(image, "Ảnh đã nhận diện")
 
 if __name__ == "__main__":
+    st.write("hhhh")
     main()
