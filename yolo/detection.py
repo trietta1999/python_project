@@ -45,7 +45,7 @@ def download(url, name):
         st.write("Đã tìm thấy file %s!" % name)
 
 classes = None
-COLORS = np.random.uniform(0, 255, size=(len(classes), 3))
+COLORS = None
 class_ids = []
 confidences = []
 boxes = []
@@ -79,6 +79,8 @@ def main():
         with open('yolo.names', 'r') as f: # Edit CLASS file
             classes = [line.strip() for line in f.readlines()]
 
+        COLORS = np.random.uniform(0, 255, size=(len(classes), 3))
+            
         net = cv2.dnn.readNet("yolov4-custom_best.weights", "yolov4-custom.cfg") # Edit WEIGHT and CONFIC file
         blob = cv2.dnn.blobFromImage(image, scale, (416, 416), (0, 0, 0), True, crop=False)
 
