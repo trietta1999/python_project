@@ -1,6 +1,9 @@
+import sys
+sys.path.append('/pages')
+
 import os
 os.system("ls")
 
-import pages.main as m
+import main
 
-m.main()
+main.main()
