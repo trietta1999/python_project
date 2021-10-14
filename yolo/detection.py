@@ -59,7 +59,7 @@ def download(url, name):
 def main():
     global classes, COLOR, class_ids, confidences, boxes, conf_threshold, nms_threshold
     
-    st.write("YoloV4")
+    st.write("YoloV4kkkkkkkkkk")
     
     download('https://archive.org/download/yolov4-custom_best/yolov4-custom_best.weights', 'yolov4-custom_best.weights')
     download('https://archive.org/download/yolov4-custom/yolov4-custom.cfg', 'yolov4-custom.cfg')
