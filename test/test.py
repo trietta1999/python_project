@@ -7,7 +7,7 @@ def main():
 
 @main.command("streamlit")
 def main_streamlit():
-    filename = os.path.join("pages, 'main.py')
+    filename = os.path.join("pages", 'main.py')
     args = []
     streamlit.cli._main_run(filename, args)
 
