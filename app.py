@@ -8,11 +8,11 @@ sys.path.append("yolo")
 app = st.selectbox("", ["Smart Steward", "YoloV4"])
 
 if (app=="Smart Steward"):
-    importlib.reload(main)
     from main import main
+    importlib.reload(main)
     main()
     
 elif (app=="YoloV4"):
-    importlib.reload(detection)
     from detection import main
+    importlib.reload(detection)
     main()
