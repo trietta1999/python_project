@@ -17,11 +17,11 @@ if (app=="Smart Steward"):
             if (ten==st.secrets["db_username"] and mk==st.secrets["db_password"]):
                 f = open("loginok.log","w")
                 f.close()
-                import pages
-                importlib.reload(pages)
-                pages.main()
             else: st.write("Tài khoản không đúng!")
-    
+    else:
+        import pages
+        importlib.reload(pages)
+        pages.main()
 elif (app=="YoloV4"):
     import detection
     importlib.reload(detection)
