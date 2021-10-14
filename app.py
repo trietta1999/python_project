@@ -3,8 +3,9 @@ import sys
 
 sys.path.remove("pages") 
 sys.path.remove("yolo")
-del sys.modules["main", "detection"]
-
+try:
+  del sys.modules["main", "detection"]
+except: pass
 app = st.selectbox("", ["Smart Steward", "YoloV4"])
 
 if (app=="Smart Steward"):
