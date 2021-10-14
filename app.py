@@ -3,6 +3,7 @@ import sys
 
 sys.path.remove("pages") 
 sys.path.remove("yolo")
+del sys.modules["main", "detection"]
 
 app = st.selectbox("", ["Smart Steward", "YoloV4"])
 
