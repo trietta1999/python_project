@@ -5,7 +5,7 @@ import importlib
 sys.path.append("pages")
 sys.path.append("yolo")
 
-app = st.selectbox("", ["Smart Steward", "YoloV4"])
+app = st.selectbox("Chọn App", ["Smart Steward", "YoloV4"])
 
 if (app=="Smart Steward"):
     import pages
