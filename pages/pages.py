@@ -11,10 +11,6 @@ def main():
 
     page = st.selectbox("", ["Trang chủ", "Điều khiển", "Giám sát", "Thống kê"])
     
-    logout = st.button("Đăng xuất")
-    if logout:
-        os.remove("loginok.log")
-
     if page == "Trang chủ":
         st.write(datetime.datetime.now(pytz.timezone('Asia/Saigon')).strftime("%a %d/%m/%Y, %X"))
 
@@ -62,6 +58,10 @@ def main():
 
     elif page == "Page 3":
         st.write("Display details of page 3")
+    
+    logout = st.button("Đăng xuất")
+    if logout:
+        os.remove("loginok.log")
         
 if __name__ == "__main__":
     main()
