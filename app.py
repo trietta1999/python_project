@@ -8,9 +8,16 @@ sys.path.append("yolo")
 app = st.selectbox("Chọn App", ["Smart Steward", "YoloV4"])
 
 if (app=="Smart Steward"):
-    import pages
-    importlib.reload(pages)
-    pages.main()
+    ten = st.text_input("Tên đăng nhập:")
+    mk = st.text_input("Mật khẩu")
+    check = st.button("Đăng nhập")
+    
+    if check:
+        if (ten==st.secrets["db_username"] and mk==st.secrets["db_password"]):
+            import pages
+            importlib.reload(pages)
+            pages.main()
+        else: st.write("Tài khoản không đúng!")
     
 elif (app=="YoloV4"):
     import detection
