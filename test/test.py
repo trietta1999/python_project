@@ -8,5 +8,5 @@ filename = os.path.join("pages", 'main.py')
 _config.set_option("server.headless", True)
 args = []
 
-#streamlit.cli.main_run(filename, args)
-streamlit.bootstrap.run(filename, '', args, flag_options={})
+streamlit.cli.main_run(filename, args)
+#streamlit.bootstrap.run(filename, '', args, flag_options={})
