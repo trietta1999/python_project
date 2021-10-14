@@ -59,5 +59,5 @@ def main():
     elif page == "Page 3":
         st.write("Display details of page 3")
         
- if __name__ == "__main__":
+if __name__ == "__main__":
     main()
