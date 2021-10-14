@@ -59,6 +59,8 @@ def download(url, name):
 def main():
     global classes, COLOR, class_ids, confidences, boxes, conf_threshold, nms_threshold
     
+    st.write("YoloV4")
+    
     download('https://archive.org/download/yolov4-custom_best/yolov4-custom_best.weights', 'yolov4-custom_best.weights')
     download('https://archive.org/download/yolov4-custom/yolov4-custom.cfg', 'yolov4-custom.cfg')
     download('https://archive.org/download/yolo_20211013/yolo.names', 'yolo.names')
@@ -154,5 +156,4 @@ def main():
         st.image(image, "Ảnh đã nhận diện")
 
 if __name__ == "__main__":
-    st.write("hhhh")
     main()
