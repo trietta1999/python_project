@@ -17,6 +17,7 @@ if (app=="Smart Steward"):
             if (ten==st.secrets["db_username"] and mk==st.secrets["db_password"]):
                 f = open("loginok.log","w")
                 f.close()
+                raise st.script_runner.RerunException(st.script_request_queue.RerunData(None))
             else: st.write("Tài khoản không đúng!")
     else:
         import pages
