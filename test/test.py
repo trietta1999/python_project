@@ -1,4 +1,5 @@
 import streamlit as st
 import os
 
-os.system("python ../pages/main.py")
+os.system("cd ../pages")
+os.system("python main.py")
