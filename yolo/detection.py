@@ -20,11 +20,12 @@ def get_output_layers(net):
 
 def draw_prediction(img, class_id, confidence, x, y, x_plus_w, y_plus_h):
     global COLORS
-    
-    label = str(classes[class_id])
-    color = COLORS[class_id]
-    cv2.rectangle(img, (x, y), (x_plus_w, y_plus_h), (255,0,0), 2)
-    cv2.putText(img, label + "%0.2f" % confidence , (x - 10, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,0,255), 2)
+    try:
+        label = str(classes[class_id])
+        color = COLORS[class_id]
+        cv2.rectangle(img, (x, y), (x_plus_w, y_plus_h), (255,0,0), 2)
+        cv2.putText(img, label + "%0.2f" % confidence , (x - 10, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,0,255), 2)
+     except: pass
 
 def drawBox(image, points):
     height, width = image.shape[:2]
