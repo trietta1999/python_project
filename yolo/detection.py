@@ -145,5 +145,5 @@ def main():
 
         st.image(image, "Ảnh đã nhận diện")
 
-if __name__ =="__main__":
+if __name__ == "__main__":
     main()
