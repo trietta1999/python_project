@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(0, '/app/python/pages')
+print(sys.path.insert(0, '/app/python/pages'))
 
 import os
 os.system("ls")
