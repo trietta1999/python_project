@@ -1,9 +1,9 @@
 import sys
-sys.path.append('pages')
+sys.path.insert(0, '/app/python/pages')
 
 import os
 os.system("ls")
 
-import main
+from pages import main
 
 main.main()
