@@ -8,7 +8,7 @@ sys.path.append("yolo")
 app = st.selectbox("Chọn App", ["Smart Steward", "YoloV4"])
 
 if (app=="Smart Steward"):
-    if (os.path.exist("loginok.log")==False):
+    if (os.path.exists("loginok.log")==False):
         ten = st.text_input("Tên đăng nhập:")
         mk = st.text_input("Mật khẩu")
         check = st.button("Đăng nhập")
