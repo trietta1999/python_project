@@ -1,15 +1,12 @@
-import click, os
-import streamlit.cli
+import os
+import streamlit.bootstrap
+from streamlit import config as _config
 
-@click.group()
-def main():
-    pass
+#dirname = os.path.dirname(__file__)
+filename = os.path.join("pages", 'main.py')
 
-@main.command("streamlit")
-def main_streamlit():
-    filename = os.path.join("pages", 'main.py')
-    args = []
-    streamlit.cli._main_run(filename, args)
+_config.set_option("server.headless", True)
+args = []
 
-if __name__ == "__main__":
-    main()
+#streamlit.cli.main_run(filename, args)
+streamlit.bootstrap.run(filename, '', args, flag_options={})
