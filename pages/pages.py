@@ -41,6 +41,9 @@ def main():
             #st.markdown("**Công suất tiêu thụ (Wh)**")
             #st.write("0.00")
             st.metric("Công suất tiêu thụ (Wh)",0)
+            
+            logout = st.button("Đăng xuất")
+            if logout: os.remove("loginok.log")
 
         rerun(1)
 
@@ -58,10 +61,6 @@ def main():
 
     elif page == "Page 3":
         st.write("Display details of page 3")
-    
-    logout = st.button("Đăng xuất")
-    if logout:
-        os.remove("loginok.log")
-        
+                
 if __name__ == "__main__":
     main()
