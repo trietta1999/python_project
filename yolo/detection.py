@@ -44,7 +44,12 @@ def download(url, name):
     else:
         st.write("Đã tìm thấy file %s!" % name)
 
+classes = None
+COLORS = np.random.uniform(0, 255, size=(len(classes), 3))
+        
 def main():
+    global classes, COLOR
+    
     download('https://archive.org/download/yolov4-custom_best/yolov4-custom_best.weights', 'yolov4-custom_best.weights')
     download('https://archive.org/download/yolov4-custom/yolov4-custom.cfg', 'yolov4-custom.cfg')
     download('https://archive.org/download/yolo_20211013/yolo.names', 'yolo.names')
@@ -65,12 +70,9 @@ def main():
         Width = image.shape[1]
         Height = image.shape[0]
         scale = 0.00392
-
-        classes = None
+        
         with open('yolo.names', 'r') as f: # Edit CLASS file
             classes = [line.strip() for line in f.readlines()]
-
-        COLORS = np.random.uniform(0, 255, size=(len(classes), 3))
 
         net = cv2.dnn.readNet("yolov4-custom_best.weights", "yolov4-custom.cfg") # Edit WEIGHT and CONFIC file
         blob = cv2.dnn.blobFromImage(image, scale, (416, 416), (0, 0, 0), True, crop=False)
