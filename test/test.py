@@ -1,4 +1,5 @@
 import subprocess, os
 import streamlit as st
-process = subprocess.Popen(["streamlit", "run", os.path.join('pages','main.py')])
+
+st.write(subprocess.Popen(["cd","pages","&&","streamlit", "run", 'main.py']))
 st.write(subprocess.Popen(["ls"]))
