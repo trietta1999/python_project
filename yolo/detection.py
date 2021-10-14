@@ -5,12 +5,22 @@ import requests, os, cv2, time
 import pandas as pd
 from PIL import Image
 
+classes = None
+COLORS = None
+class_ids = []
+confidences = []
+boxes = []
+conf_threshold = 0.2
+nms_threshold = 0.4
+
 def get_output_layers(net):
     layer_names = net.getLayerNames()
     output_layers = [layer_names[i[0] - 1] for i in net.getUnconnectedOutLayers()]
     return output_layers
 
 def draw_prediction(img, class_id, confidence, x, y, x_plus_w, y_plus_h):
+    global COLOR
+    
     label = str(classes[class_id])
     color = COLORS[class_id]
     cv2.rectangle(img, (x, y), (x_plus_w, y_plus_h), (255,0,0), 2)
@@ -28,6 +38,7 @@ def drawBox(image, points):
         y = int(center_y - h / 2)
         cv2.rectangle(image, (x, y), (x + w, y + h), black, 1)
     return
+
 def savePredict(name, text):
     textName = name + '.txt'
     with open(textName, 'w+') as groundTruth:
@@ -43,14 +54,6 @@ def download(url, name):
         f.close()
     else:
         st.write("Đã tìm thấy file %s!" % name)
-
-classes = None
-COLORS = None
-class_ids = []
-confidences = []
-boxes = []
-conf_threshold = 0.2
-nms_threshold = 0.4
         
 def main():
     global classes, COLOR, class_ids, confidences, boxes, conf_threshold, nms_threshold
