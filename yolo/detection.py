@@ -46,9 +46,14 @@ def download(url, name):
 
 classes = None
 COLORS = np.random.uniform(0, 255, size=(len(classes), 3))
+class_ids = []
+confidences = []
+boxes = []
+conf_threshold = 0.2
+nms_threshold = 0.4
         
 def main():
-    global classes, COLOR
+    global classes, COLOR, class_ids, confidences, boxes, conf_threshold, nms_threshold
     
     download('https://archive.org/download/yolov4-custom_best/yolov4-custom_best.weights', 'yolov4-custom_best.weights')
     download('https://archive.org/download/yolov4-custom/yolov4-custom.cfg', 'yolov4-custom.cfg')
@@ -80,12 +85,7 @@ def main():
         net.setInput(blob)
         outs = net.forward(get_output_layers(net))
         #print(outs)
-        class_ids = []
-        confidences = []
-        boxes = []
-        conf_threshold = 0.2
-        nms_threshold = 0.4
-
+       
         start = time.time()
 
         for out in outs:
