@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/pages')
+sys.path.append('pages')
 
 import os
 os.system("ls")
