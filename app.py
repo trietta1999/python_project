@@ -15,7 +15,7 @@ if (app=="Smart Steward"):
 
         if check:
             if (ten==st.secrets["db_username"] and mk==st.secrets["db_password"]):
-                f = open("loginok.log")
+                f = open("loginok.log","w")
                 f.close()
                 import pages
                 importlib.reload(pages)
