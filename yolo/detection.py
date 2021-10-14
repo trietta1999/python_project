@@ -2,7 +2,6 @@
 import numpy as np
 import streamlit as st
 import requests, os, cv2, time
-import pandas as pd
 from PIL import Image
 
 classes = None
