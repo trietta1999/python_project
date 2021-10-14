@@ -3,4 +3,4 @@ import streamlit as st
 
 #st.write(subprocess.call(os.getcwd()))
 #st.write(subprocess.run([os.chdir("/app/python/pages"),"&&","streamlit", "run", 'main.py']))
-st.write(subprocess.Popen(["streamlit", "run",os.path.join("/app/python/pages/main.py")]))
+subprocess.Popen(["streamlit", "run",os.path.join("/app/python/pages/main.py")])
