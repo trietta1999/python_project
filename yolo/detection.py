@@ -19,7 +19,7 @@ def get_output_layers(net):
     return output_layers
 
 def draw_prediction(img, class_id, confidence, x, y, x_plus_w, y_plus_h):
-    global COLOR
+    global COLORS
     
     label = str(classes[class_id])
     color = COLORS[class_id]
