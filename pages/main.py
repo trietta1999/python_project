@@ -54,7 +54,7 @@ def main():
             ph_ngu_2 = st.checkbox("Phòng ngủ 2")
             ph_bep = st.checkbox("Phòng bếp")
             ph_tam = st.checkbox("Phòng tắm")
-            o_cam = st.checkbox("Ổ cắm điện4444")
+            o_cam = st.checkbox("Ổ cắm điện")
 
     elif page == "Page 3":
         st.write("Display details of page 3")
