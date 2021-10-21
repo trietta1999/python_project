@@ -14,7 +14,7 @@ nms_threshold = 0.4
 
 def get_output_layers(net):
     layer_names = net.getLayerNames()
-    output_layers = [layer_names[i - 1] for i in net.getUnconnectedOutLayers()]
+    output_layers = [layer_names[i[0] - 1] for i in net.getUnconnectedOutLayers()]
     return output_layers
 
 def draw_prediction(img, class_id, confidence, x, y, x_plus_w, y_plus_h):
