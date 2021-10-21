@@ -1,6 +1,6 @@
 import streamlit as st
 import sys, os, importlib
-st.write(os.system("ls"))
+st.write(os.path.getsize("yolov4-custom_best.weights"))
 # sys.path.append("pages")
 # sys.path.append("yolo")
 
