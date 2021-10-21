@@ -1,6 +1,5 @@
 import streamlit as st
-import sys, os
-import importlib
+import sys, os, importlib
 
 sys.path.append("pages")
 sys.path.append("yolo")
