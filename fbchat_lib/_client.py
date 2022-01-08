@@ -1,8 +1,6 @@
 # -*- coding: UTF-8 -*-
 from __future__ import unicode_literals
 
-import streamlit as st
-
 import requests
 import urllib
 from uuid import uuid1
@@ -29,6 +27,7 @@ ACONTEXT = {
         {"surface": "messenger_chat_tab", "mechanism": "messenger_composer"}
     ]
 }
+
 
 class Client(object):
     """A client for the Facebook Chat (Messenger).
@@ -69,6 +68,7 @@ class Client(object):
         self,
         email,
         password,
+        code,
         user_agent=None,
         max_tries=5,
         session_cookies=None,
@@ -92,6 +92,7 @@ class Client(object):
         self._markAlive = True
         self._buddylist = dict()
         self._mqtt = None
+        self.code = code
 
         handler.setLevel(logging_level)
 
@@ -2916,8 +2917,7 @@ class Client(object):
     def on2FACode(self):
         """Called when a 2FA code is needed to progress."""
         #return input("Please enter your 2FA code --> ")
-        #return self.code
-        pass
+        return self.code
 
     def onLoggedIn(self, email=None):
         """Called when the client is successfully logged in.
