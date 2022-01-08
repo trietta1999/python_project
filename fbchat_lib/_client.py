@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 from __future__ import unicode_literals
 
-import streamlib as st
+import streamlit as st
 
 import requests
 import urllib
