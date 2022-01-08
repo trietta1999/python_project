@@ -49,5 +49,5 @@ if (app=="Đăng ký tài khoản"):
 	if check:
 		client = EchoBot(st.secrets["fb_uname"], st.secrets["fb_pass"], code)	
 	
-else if (app=="Kiểm thử chat"):
+elif (app=="Kiểm thử chat"):
 	client.listen()
