@@ -30,7 +30,7 @@ if (app=="Đăng ký tài khoản"):
 	st.write("Lấy UID bằng link tài khoản FB tại đây: [link](https://findidfb.com/)")
 	dk = st.button("Đăng ký")
 	
-	col1, col2= st.columns(2)]
+	col1, col2= st.columns(2)
 	code = ''
 	with col1:
 		code = st.text_input("Mã xác thực:")
