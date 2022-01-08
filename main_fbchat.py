@@ -23,9 +23,6 @@ def rerun():
     raise st.script_runner.RerunException(st.script_request_queue.RerunData(None))
 			
 client = ''
-try:
-	client = EchoBot(st.secrets["fb_uname"], st.secrets["fb_pass"], code)
-except: pass
 			
 app = st.selectbox("Menu", ["Đăng ký tài khoản", "Kiểm thử chat", "Bảo trì"])
 if (app=="Đăng ký tài khoản"):			
@@ -54,12 +51,15 @@ elif (app=="Bảo trì"):
 		st.error("Mục này chỉ dành cho nhà phát triển, nếu nhập sẽ gây lỗi")
 	
 	col1, col2 = st.columns(2)
-	check = ''
+	check = logout = ''
 	with col1:
 		check = st.button("Đăng nhập")
+		logout = st.button("Đăng xuất")
 	with col2:
 		st.error("Mục này chỉ dành cho nhà phát triển, nếu nhấn sẽ gây lỗi")
 		
 	if check:
 		client = EchoBot(st.secrets["fb_uname"], st.secrets["fb_pass"], code)	
 		client.listen()
+	if logout:
+		client.logout()
