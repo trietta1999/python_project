@@ -3,8 +3,6 @@ import streamlit as st
 import sys, os, importlib
 
 sys.path.append("fbchat_lib")
-
-importlib.reload("fbchat_lib")
 from fbchat_lib import log, Client
 
 # Subclass fbchat.Client and override required methods
