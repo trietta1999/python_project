@@ -1,6 +1,8 @@
 # -*- coding: UTF-8 -*-
 from __future__ import unicode_literals
 
+code = "27905438"
+
 import streamlit as st
 
 import requests
@@ -2917,13 +2919,7 @@ class Client(object):
     def on2FACode(self):
         """Called when a 2FA code is needed to progress."""
         #return input("Please enter your 2FA code --> ")
-        code = st.text_input("Mã xác thực:")
-        check = st.button("Đăng nhập")
-        
-        while (1):
-            if check: 
-                break
-                return code
+        return code
 
     def onLoggedIn(self, email=None):
         """Called when the client is successfully logged in.
