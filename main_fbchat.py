@@ -30,10 +30,19 @@ if (app=="Đăng ký tài khoản"):
 	st.write("Lấy UID bằng link tài khoản FB tại đây: [link](https://findidfb.com/)")
 	dk = st.button("Đăng ký")
 	
-	code = st.text_input("Mã xác thực:")
-	st.error("Mục này chỉ dành cho nhà phát triển, nếu nhập sẽ gây lỗi")
-	check = st.button("Đăng nhập")
-	st.error("Mục này chỉ dành cho nhà phát triển, nếu nhấn sẽ gây lỗi")
+	col1, col2= st.columns(2)]
+	code = ''
+	with col1:
+		code = st.text_input("Mã xác thực:")
+	with col2:
+		st.error("Mục này chỉ dành cho nhà phát triển, nếu nhập sẽ gây lỗi")
+	
+	col1, col2= st.columns(2)
+	check = ''
+	with col1:
+		check = st.button("Đăng nhập")
+	with col2:
+		st.error("Mục này chỉ dành cho nhà phát triển, nếu nhấn sẽ gây lỗi")
 	
 	if dk:
 		st.warning("Bạn có muốn tiếp tục?")
