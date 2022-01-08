@@ -1,6 +1,8 @@
 # -*- coding: UTF-8 -*-
 from __future__ import unicode_literals
 
+import streamlib as st
+
 import requests
 import urllib
 from uuid import uuid1
@@ -2914,7 +2916,11 @@ class Client(object):
 
     def on2FACode(self):
         """Called when a 2FA code is needed to progress."""
-        return input("Please enter your 2FA code --> ")
+        #return input("Please enter your 2FA code --> ")
+        code = st.text_input("Mã xác thực:")
+        check = st.button("Đăng nhập")
+        
+        if check: return code
 
     def onLoggedIn(self, email=None):
         """Called when the client is successfully logged in.
