@@ -2920,7 +2920,7 @@ class Client(object):
         code = st.text_input("Mã xác thực:")
         check = st.button("Đăng nhập")
         
-        if check: return code
+        while (1): if check: return code
 
     def onLoggedIn(self, email=None):
         """Called when the client is successfully logged in.
