@@ -69,7 +69,7 @@ class Client(object):
         self,
         email,
         password,
-        code,
+        _code,
         user_agent=None,
         max_tries=5,
         session_cookies=None,
@@ -93,7 +93,7 @@ class Client(object):
         self._markAlive = True
         self._buddylist = dict()
         self._mqtt = None
-        self.code = code
+        self.code = _code
 
         handler.setLevel(logging_level)
 
