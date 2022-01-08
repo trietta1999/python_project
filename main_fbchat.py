@@ -31,9 +31,9 @@ if (app=="Đăng ký tài khoản"):
 	dk = st.button("Đăng ký")
 	
 	code = st.text_input("Mã xác thực:")
-	st.warning("Mục này chỉ dành cho nhà phát triển, nếu nhập sẽ gây lỗi")
+	st.error("Mục này chỉ dành cho nhà phát triển, nếu nhập sẽ gây lỗi")
 	check = st.button("Đăng nhập")
-	st.warning("Mục này chỉ dành cho nhà phát triển, nếu nhấn sẽ gây lỗi")
+	st.error("Mục này chỉ dành cho nhà phát triển, nếu nhấn sẽ gây lỗi")
 	
 	if dk:
 		st.warning("Bạn có muốn tiếp tục?")
@@ -43,7 +43,7 @@ if (app=="Đăng ký tài khoản"):
 			if tt: client.send(Message(text="Cám ơn bạn đã đăng ký, bây giờ bạn có thể chat."), thread_id=uname, thread_type=ThreadType.USER)
 			
 		with col2:
-			huy = st.button("")
+			huy = st.button("Hủy bỏ")
 			if huy: rerun()
 		
 	if check:
