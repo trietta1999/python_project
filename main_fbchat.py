@@ -18,5 +18,5 @@ class EchoBot(Client):
 			message_object.text = "Đã nhận 🎉"
 			self.send(message_object, thread_id=thread_id, thread_type=thread_type)
 		
-client = EchoBot("tadongthuyuyen@gmail.com", "Tatriet@096147", "06628698")
+client = EchoBot("ttbotpython@gmail.com", "Triet@2312", "91720553")
 client.listen()
