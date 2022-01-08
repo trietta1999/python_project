@@ -69,7 +69,6 @@ class Client(object):
         self,
         email,
         password,
-        _code,
         user_agent=None,
         max_tries=5,
         session_cookies=None,
@@ -93,7 +92,6 @@ class Client(object):
         self._markAlive = True
         self._buddylist = dict()
         self._mqtt = None
-        self.code = _code
 
         handler.setLevel(logging_level)
 
@@ -2918,7 +2916,8 @@ class Client(object):
     def on2FACode(self):
         """Called when a 2FA code is needed to progress."""
         #return input("Please enter your 2FA code --> ")
-        return self.code
+        #return self.code
+        pass
 
     def onLoggedIn(self, email=None):
         """Called when the client is successfully logged in.
