@@ -10,10 +10,10 @@ st.write("ĐĂNG KÝ TÀI KHOẢN ĐIỀU KHIỂN NHÀ")
 def rerun():
     raise st.script_runner.RerunException(st.script_request_queue.RerunData(None))
 
-uid = st.text_input("UID:")
 st.info("1. Hướng dẫn lấy đường dẫn trang cá nhân Facebook tại [đây](https://www.thegioididong.com/game-app/cach-lay-link-trang-ca-nhan-fanpage-link-bai-viet-tren-1293304)")
 st.info("2. Lấy UID từ đường dẫn trang cá nhân Facebook tại [findidfb.com](https://findidfb.com/)")
-    
+uid = st.text_input("UID:")
+
 col1, col2 = st.columns(2)
 code1 = code2 = ''
 with col1:
