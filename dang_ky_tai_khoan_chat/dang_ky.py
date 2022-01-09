@@ -28,3 +28,4 @@ if dk:
     if totp.verify(code1):
         firebase.put("/", "request/re_uid", 1)
         firebase.put("/", "request/uid", uid)
+        firebase.put("/", "request/code", code2)
