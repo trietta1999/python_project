@@ -19,7 +19,7 @@ with col2:
     
 uid = st.text_input("UID:")
 
-st.info("Lấy mã xác thực trong app Google Authenticator và mã trên màn hình LCD trong nhà")
+st.info("Bước 3. Lấy mã xác thực trong app Google Authenticator và mã trên màn hình LCD trong nhà")
 
 col1, col2 = st.columns(2)
 code1 = code2 = ''
