@@ -1,7 +1,7 @@
 import streamlit as st
 import pyotp
 
-totp = pyotp.TOTP("tbotbase32trietta")
+totp = pyotp.TOTP(st.secrets["otp_secret"])
 
 st.write("ĐĂNG KÝ TÀI KHOẢN ĐIỀU KHIỂN NHÀ")
 
@@ -18,3 +18,7 @@ with col1:
     code = st.text_input("Mã xác thực:")
 with col2:
     st.info("Lấy mã xác thực trong app Google Authenticator hoặc mã trên màn hình LCD trong nhà")
+
+dk = st.button("Đăng ký")
+if dk:
+    st.write(totp.verify(code))
