@@ -1,5 +1,6 @@
 import streamlit as st
 from firebase import firebase
+from time import sleep
 import pyotp
 
 totp = pyotp.TOTP(st.secrets["otp_secret"])
@@ -32,6 +33,7 @@ if dk:
         firebase.put("/", "request/code", code2)
         st.write("Đang đăng ký...")
         while(firebase.get('/request/success', None)==0): pass
+        sleep(2)
         rerun()
 
 if firebase.get('/request/success', None)==1:
