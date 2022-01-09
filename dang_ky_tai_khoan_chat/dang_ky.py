@@ -4,7 +4,7 @@ import pyotp
 
 totp = pyotp.TOTP(st.secrets["otp_secret"])
 
-firebase = firebase.FirebaseApplication(st.secrets["firebase_link_project"], None)
+firebase0 = firebase.FirebaseApplication(st.secrets["firebase_link_project"], None)
 
 st.write("ĐĂNG KÝ TÀI KHOẢN ĐIỀU KHIỂN NHÀ")
 
@@ -26,4 +26,4 @@ with col2:
 dk = st.button("Đăng ký")
 if dk:
     if totp.verify(code1):
-        firebase.put("/", "request", uid)
+        firebase0.put("/", "request", uid)
