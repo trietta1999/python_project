@@ -15,9 +15,10 @@ st.info("1. Hướng dẫn lấy đường dẫn trang cá nhân Facebook tại 
 st.info("2. Lấy UID từ đường dẫn trang cá nhân Facebook tại [findidfb.com](https://findidfb.com/)")
 uid = st.text_input("UID:")
 
+st.info("Lấy mã xác thực trong app Google Authenticator và mã trên màn hình LCD trong nhà")
+
 col1, col2 = st.columns(2)
 code1 = code2 = ''
-st.info("Lấy mã xác thực trong app Google Authenticator và mã trên màn hình LCD trong nhà")
 with col1:
     code1 = st.text_input("Mã xác thực Google Authenticator:")
 with col2:
