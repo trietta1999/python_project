@@ -33,7 +33,6 @@ if dk:
         firebase.put("/", "request/code", code2)
         st.write("Đang đăng ký...")
         while(firebase.get('/request/success', None)==0): pass
-        sleep(2)
         rerun()
 
 if firebase.get('/request/success', None)==1:
