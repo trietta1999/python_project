@@ -1,7 +1,8 @@
+pyotp
 python-jwt
 gcloud 
 sseclient
-pycrypto
+pycryptodome
 requests-toolbelt
 python-firebase
 firebase
