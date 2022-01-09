@@ -26,4 +26,5 @@ with col2:
 dk = st.button("Đăng ký")
 if dk:
     if totp.verify(code1):
-        firebase.put("/", "request", uid)
+        firebase.put("/", "request/re_uid", 1)
+        firebase.put("/", "request/uid", uid)
