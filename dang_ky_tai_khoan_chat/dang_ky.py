@@ -4,7 +4,7 @@ import pyotp
 
 totp = pyotp.TOTP(st.secrets["otp_secret"])
 
-firebase = firebase.FirebaseApplication(st.secrets["firebase_link_project"], "BB1UD4sslGjWOlizxUxwrkxWlUXjj1vprNDtIZGF")
+firebase = firebase.FirebaseApplication(st.secrets["firebase_link_project"], None)
 
 st.write("ĐĂNG KÝ TÀI KHOẢN ĐIỀU KHIỂN NHÀ")
 
