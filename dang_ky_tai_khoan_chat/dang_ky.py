@@ -11,8 +11,12 @@ st.markdown('<p style="font-family:sans-serif; font-size: 30px;"><b>ĐĂNG KÝ T
 def rerun():
     raise st.script_runner.RerunException(st.script_request_queue.RerunData(None))
 
-st.info("1. Hướng dẫn lấy đường dẫn trang cá nhân Facebook tại [đây](https://www.thegioididong.com/game-app/cach-lay-link-trang-ca-nhan-fanpage-link-bai-viet-tren-1293304)")
-st.info("2. Lấy UID từ đường dẫn trang cá nhân Facebook tại [findidfb.com](https://findidfb.com/)")
+col1, col2 = st.columns(2)
+with col1:
+    st.info("1. Hướng dẫn lấy đường dẫn trang cá nhân Facebook tại [đây](https://www.thegioididong.com/game-app/cach-lay-link-trang-ca-nhan-fanpage-link-bai-viet-tren-1293304)")
+with col2:
+    st.info("2. Lấy UID từ đường dẫn trang cá nhân Facebook tại [findidfb.com](https://findidfb.com/)")
+    
 uid = st.text_input("UID:")
 
 st.info("Lấy mã xác thực trong app Google Authenticator và mã trên màn hình LCD trong nhà")
