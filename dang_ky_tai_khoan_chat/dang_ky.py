@@ -37,4 +37,4 @@ if dk:
 # elif firebase.get('/request/success', None)==2:
 #     st.write("Đăng ký tài khoản không thành công.")
 #     firebase.put("/", "request/success", 0)
-st.write(firebase.get('/request/success', None))
+st.write(type(firebase.get('/request/success', None)))
