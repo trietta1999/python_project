@@ -39,8 +39,8 @@ if dk:
         rerun()
 
 if firebase.get('/request/success', None)==1:
-    st.info("Đăng ký tài khoản thành công.")
+    st.info("Đăng ký tài khoản thành công. Kiểm tra tin nhắn trong Messenger")
     firebase.put("/", "request/success", 0)
 elif firebase.get('/request/success', None)==2:
-    st.error("Đăng ký tài khoản không thành công.")
+    st.error("Đăng ký tài khoản không thành công. Kiểm tra thông tin và thử lại.")
     firebase.put("/", "request/success", 0)
