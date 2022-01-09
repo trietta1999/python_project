@@ -15,7 +15,8 @@ uid = ''
 with col1:
     uid = st.text_input("UID:")
 with col2:
-    st.info("Lấy UID từ đường dẫn trang cá nhân Facebook tại [findidfb.com](https://findidfb.com/)")
+    st.info("1. Hướng dẫn lấy đường dẫn trang cá nhân Facebook tại [đây](https://www.thegioididong.com/game-app/cach-lay-link-trang-ca-nhan-fanpage-link-bai-viet-tren-1293304)")
+    st.info("2. Lấy UID từ đường dẫn trang cá nhân Facebook tại [findidfb.com](https://findidfb.com/)")
     
 col1, col2 = st.columns(2)
 code1 = code2 = ''
