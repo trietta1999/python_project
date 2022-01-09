@@ -31,9 +31,10 @@ if dk:
         firebase.put("/", "request/uid", uid)
         firebase.put("/", "request/code", code2)
 
-if firebase.get('/request/success', None)==1:
-    st.write("Đăng ký tài khoản thành công.")
-    firebase.put("/", "request/success", 0)
-elif firebase.get('/request/success', None)==2:
-    st.write("Đăng ký tài khoản không thành công.")
-    firebase.put("/", "request/success", 0)
+# if firebase.get('/request/success', None)==1:
+#     st.write("Đăng ký tài khoản thành công.")
+#     firebase.put("/", "request/success", 0)
+# elif firebase.get('/request/success', None)==2:
+#     st.write("Đăng ký tài khoản không thành công.")
+#     firebase.put("/", "request/success", 0)
+st.write(firebase.get('/request/success', None))
