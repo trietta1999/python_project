@@ -5,8 +5,8 @@ import pyotp
 
 totp = pyotp.TOTP(st.secrets["otp_secret"])
 firebase = firebase.FirebaseApplication(st.secrets["firebase_link_project"], None)
-st.write("ĐĂNG KÝ TÀI KHOẢN ĐIỀU KHIỂN NHÀ")
-#st.markdown('<p style="font-family:sans-serif; font-size: 35px;"><b>ĐĂNG KÝ TÀI KHOẢN ĐIỀU KHIỂN NHÀ</b><br></p>', unsafe_allow_html=True)
+#st.write("ĐĂNG KÝ TÀI KHOẢN ĐIỀU KHIỂN NHÀ")
+st.markdown('<p style="font-family:sans-serif; font-size: 30px;"><b>ĐĂNG KÝ TÀI KHOẢN ĐIỀU KHIỂN NHÀ</b><br></p>', unsafe_allow_html=True)
 
 def rerun():
     raise st.script_runner.RerunException(st.script_request_queue.RerunData(None))
