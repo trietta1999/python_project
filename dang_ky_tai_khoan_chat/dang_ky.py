@@ -1,4 +1,7 @@
 import streamlit as st
+import pyotp
+
+totp = pyotp.TOTP("tbotbase32trietta")
 
 st.write("ĐĂNG KÝ TÀI KHOẢN ĐIỀU KHIỂN NHÀ")
 
