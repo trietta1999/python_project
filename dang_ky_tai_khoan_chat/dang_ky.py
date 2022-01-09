@@ -32,8 +32,8 @@ if dk:
         firebase.put("/", "request/code", code2)
 
 if firebase.get('/request/success', None)==1:
-    st.write("Đăng ký tài khoản thành công.")
+    st.info("Đăng ký tài khoản thành công.")
     firebase.put("/", "request/success", 0)
 elif firebase.get('/request/success', None)==2:
-    st.write("Đăng ký tài khoản không thành công.")
+    st.error("Đăng ký tài khoản không thành công.")
     firebase.put("/", "request/success", 0)
