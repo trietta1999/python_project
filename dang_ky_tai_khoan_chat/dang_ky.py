@@ -21,4 +21,4 @@ with col2:
 
 dk = st.button("Đăng ký")
 if dk:
-    st.write(totp.verify(code))
+    if totp.verify(code): st.write()
