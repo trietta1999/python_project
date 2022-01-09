@@ -30,6 +30,9 @@ if dk:
         firebase.put("/", "request/re_uid", 1)
         firebase.put("/", "request/uid", uid)
         firebase.put("/", "request/code", code2)
+        st.write("Đang đăng ký...")
+        while(firebase.get('/request/success', None)==0): pass
+        rerun()
 
 if firebase.get('/request/success', None)==1:
     st.info("Đăng ký tài khoản thành công.")
