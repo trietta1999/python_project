@@ -17,11 +17,11 @@ uid = st.text_input("UID:")
 
 col1, col2 = st.columns(2)
 code1 = code2 = ''
+st.info("Lấy mã xác thực trong app Google Authenticator và mã trên màn hình LCD trong nhà")
 with col1:
     code1 = st.text_input("Mã xác thực Google Authenticator:")
-    code2 = st.text_input("Mã xác thực trên màn hình LCD:")
 with col2:
-    st.info("Lấy mã xác thực trong app Google Authenticator và mã trên màn hình LCD trong nhà")
+    code2 = st.text_input("Mã xác thực trên màn hình LCD:")
 
 dk = st.button("Đăng ký")
 if dk:
