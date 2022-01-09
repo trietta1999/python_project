@@ -7,14 +7,19 @@ totp = pyotp.TOTP(st.secrets["otp_secret"])
 firebase = firebase.FirebaseApplication(st.secrets["firebase_link_project"], None)
 st.write("ĐĂNG KÝ TÀI KHOẢN ĐIỀU KHIỂN NHÀ")
 
+def rerun():
+    raise st.script_runner.RerunException(st.script_request_queue.RerunData(None))
+
 def check_success():
     global firebase
     while (1):
         if firebase.get('/request/success', None)==1:
             st.write("Đăng ký tài khoản thành công.")
             firebase.put("/", "request/success", 0)
+            rerun()
         elif firebase.get('/request/success', None)==2:
             firebase.put("/", "request/success", 0)
+            rerun()
 
 col1, col2 = st.columns(2)
 uid = ''
@@ -37,3 +42,5 @@ if dk:
         firebase.put("/", "request/re_uid", 1)
         firebase.put("/", "request/uid", uid)
         firebase.put("/", "request/code", code2)
+        th = Thread(target=check_success)
+        th.start()
