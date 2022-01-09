@@ -13,11 +13,11 @@ def rerun():
 def check_success():
     global firebase
     while (1):
-        if firebase.get('/request/success', None)==1:
+        if firebase.get('/request/success', None)=="1":
             st.write("Đăng ký tài khoản thành công.")
             firebase.put("/", "request/success", 0)
             rerun()
-        elif firebase.get('/request/success', None)==2:
+        elif firebase.get('/request/success', None)=="2":
             firebase.put("/", "request/success", 0)
             rerun()
 
