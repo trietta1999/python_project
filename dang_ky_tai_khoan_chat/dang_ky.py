@@ -9,12 +9,12 @@ firebase = firebase.FirebaseApplication(st.secrets["firebase_link_project"], Non
 def rerun():
     raise st.script_runner.RerunException(st.script_request_queue.RerunData(None))
 
-page = st.selectbox("", ["Đăng ký", "Đăng nhập từ xa"])
+page = st.selectbox("", ["Đăng ký tài khoản điều khiển nhà", "Đăng nhập từ xa"])
 
 if page == "Đăng ký":
 
     #st.write("ĐĂNG KÝ TÀI KHOẢN ĐIỀU KHIỂN NHÀ")
-    st.markdown('<p style="font-family:sans-serif; font-size: 30px;"><b>ĐĂNG KÝ TÀI KHOẢN ĐIỀU KHIỂN NHÀ</b><br></p>', unsafe_allow_html=True)
+    #st.markdown('<p style="font-family:sans-serif; font-size: 30px;"><b>ĐĂNG KÝ TÀI KHOẢN ĐIỀU KHIỂN NHÀ</b><br></p>', unsafe_allow_html=True)
 
     st.info("Bước 1. Lấy ID người dùng của bạn tại [đây](https://bigone.zendesk.com/hc/en-us/articles/360008014894-How-to-get-the-Telegram-user-ID-).")
 
