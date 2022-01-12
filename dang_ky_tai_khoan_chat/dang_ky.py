@@ -47,6 +47,7 @@ if page == "Đăng ký":
         firebase.put("/", "request/success", 0)
         
 if page == "Đăng nhập từ xa":
+    col1, col2 = st.columns(2)
     code1 = code2 = ''
     with col1:
         st.info("Ghi /xacthuc trong khung chat để lấy mã xác thực trong tin nhắn Telegram.")
