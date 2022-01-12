@@ -16,7 +16,7 @@ if page == "Đăng ký tài khoản điều khiển nhà":
     #st.write("ĐĂNG KÝ TÀI KHOẢN ĐIỀU KHIỂN NHÀ")
     #st.markdown('<p style="font-family:sans-serif; font-size: 30px;"><b>ĐĂNG KÝ TÀI KHOẢN ĐIỀU KHIỂN NHÀ</b><br></p>', unsafe_allow_html=True)
 
-    st.info("Bước 1. Lấy ID người dùng của bạn tại [đây](https://bigone.zendesk.com/hc/en-us/articles/360008014894-How-to-get-the-Telegram-user-ID-).")
+    st.info("Bước 1. Xem cách lấy ID người dùng của bạn tại [đây](https://bigone.zendesk.com/hc/en-us/articles/360008014894-How-to-get-the-Telegram-user-ID-).")
 
     uid = st.text_input("ID người dùng:")
 
