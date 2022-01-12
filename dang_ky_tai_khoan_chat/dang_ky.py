@@ -47,10 +47,11 @@ if page == "Đăng ký":
         firebase.put("/", "request/success", 0)
         
 if page == "Đăng nhập từ xa":
-    col1, col2 = st.columns(2)
-    code1 = code2 = ''
     st.info("Ghi /xacthuc trong khung chat để lấy mã xác thực trong tin nhắn Telegram.")
     st.warning("Tài khoản của bạn phải đăng ký trước mới thực hiện được chức năng này.")
+    
+    col1, col2 = st.columns(2)
+    code1 = code2 = ''
     with col1:
         code1 = st.text_input("Nhập mã xác thực trong tin nhắn Telegram:")
     with col2:
@@ -64,6 +65,7 @@ if page == "Đăng nhập từ xa":
         st.write("Đang đăng nhập...")
         while(firebase.get('/loggin/success', None)==0): pass
         rerun()
+        
         if firebase.get('/login/success', None)==1:
             st.info("Đăng nhập thành công.")
             firebase.put("/", "login/success", 0)
