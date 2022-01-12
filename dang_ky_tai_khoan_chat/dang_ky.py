@@ -38,9 +38,10 @@ if page == "Đăng ký tài khoản điều khiển nhà":
             st.write("Đang đăng ký...")
             while(firebase.get('/request/success', None)==0): pass
             rerun()
+        else: st.error("Hãy kiểm tra lại mã xác thực trong app Google Authenticator.")
 
     if firebase.get('/request/success', None)==1:
-        st.info("Đăng ký tài khoản thành công. Hãy kiểm tra tin nhắn trong Telegram.")
+        st.info("Đăng ký tài khoản thành công. Hãy kiểm tra lại UID/mã xác thực Google Authenticator/mã trên LCD và thử lại.")
         firebase.put("/", "request/success", 0)
     elif firebase.get('/request/success', None)==2:
         st.error("Đăng ký tài khoản không thành công. Hãy kiểm tra thông tin và thử lại.")
