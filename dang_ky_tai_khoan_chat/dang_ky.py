@@ -11,7 +11,7 @@ def rerun():
 
 page = st.selectbox("", ["Đăng ký tài khoản điều khiển nhà", "Đăng nhập từ xa"])
 
-if page == "Đăng ký":
+if page == "Đăng ký tài khoản điều khiển nhà":
 
     #st.write("ĐĂNG KÝ TÀI KHOẢN ĐIỀU KHIỂN NHÀ")
     #st.markdown('<p style="font-family:sans-serif; font-size: 30px;"><b>ĐĂNG KÝ TÀI KHOẢN ĐIỀU KHIỂN NHÀ</b><br></p>', unsafe_allow_html=True)
