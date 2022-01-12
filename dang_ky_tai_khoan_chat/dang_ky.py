@@ -61,7 +61,7 @@ if page == "Đăng nhập từ xa":
     if dk:
         firebase.put("/", "login/code1", code1)
         firebase.put("/", "login/code2", code2)
-        firebase.put("/", "request/re_login", 1)
+        firebase.put("/", "login/re_login", 1)
         st.write("Đang đăng nhập...")
         while(firebase.get('/loggin/success', None)==0): pass
         rerun()
