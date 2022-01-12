@@ -66,9 +66,9 @@ if page == "Đăng nhập từ xa":
         while(firebase.get('/loggin/success', None)==0): pass
         rerun()
         
-        if firebase.get('/login/success', None)==1:
-            st.info("Đăng nhập thành công.")
-            firebase.put("/", "login/success", 0)
-        elif firebase.get('/login/success', None)==2:
-            st.error("Đăng nhập không thành công. Ghi /xacthuc trong khung chat để lấy mã xác thực mới trong tin nhắn Telegram")
-            firebase.put("/", "login/success", 0)
+    if firebase.get('/login/success', None)==1:
+        st.info("Đăng nhập thành công.")
+        firebase.put("/", "login/success", 0)
+    elif firebase.get('/login/success', None)==2:
+        st.error("Đăng nhập không thành công. Ghi /xacthuc trong khung chat để lấy mã xác thực mới trong tin nhắn Telegram")
+        firebase.put("/", "login/success", 0)
