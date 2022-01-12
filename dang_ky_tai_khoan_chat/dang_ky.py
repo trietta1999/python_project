@@ -11,15 +11,11 @@ st.markdown('<p style="font-family:sans-serif; font-size: 30px;"><b>ĐĂNG KÝ T
 def rerun():
     raise st.script_runner.RerunException(st.script_request_queue.RerunData(None))
 
-col1, col2 = st.columns(2)
-with col1:
-    st.info("Bước 1. Hướng dẫn lấy đường dẫn trang cá nhân Facebook tại [đây](https://www.thegioididong.com/game-app/cach-lay-link-trang-ca-nhan-fanpage-link-bai-viet-tren-1293304)")
-with col2:
-    st.info("Bước 2. Lấy UID từ đường dẫn trang cá nhân Facebook tại [findidfb.com](https://findidfb.com/)")
+st.info("Bước 1. Lấy ID người dùng của bạn tại [đây](https://bigone.zendesk.com/hc/en-us/articles/360008014894-How-to-get-the-Telegram-user-ID-)")
     
-uid = st.text_input("UID:")
+uid = st.text_input("ID người dùng:")
 
-st.info("Bước 3. Lấy mã xác thực trong app Google Authenticator và mã trên màn hình LCD trong nhà")
+st.info("Bước 2. Lấy mã xác thực trong app Google Authenticator và mã trên màn hình LCD trong nhà")
 
 col1, col2 = st.columns(2)
 code1 = code2 = ''
@@ -39,7 +35,7 @@ if dk:
         rerun()
 
 if firebase.get('/request/success', None)==1:
-    st.info("Đăng ký tài khoản thành công. Hãy kiểm tra tin nhắn trong Messenger.")
+    st.info("Đăng ký tài khoản thành công. Hãy kiểm tra tin nhắn trong Telegram.")
     firebase.put("/", "request/success", 0)
 elif firebase.get('/request/success', None)==2:
     st.error("Đăng ký tài khoản không thành công. Hãy kiểm tra thông tin và thử lại.")
