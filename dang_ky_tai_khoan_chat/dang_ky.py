@@ -49,9 +49,9 @@ if page == "Đăng ký":
 if page == "Đăng nhập từ xa":
     col1, col2 = st.columns(2)
     code1 = code2 = ''
+    st.info("Ghi /xacthuc trong khung chat để lấy mã xác thực trong tin nhắn Telegram.")
+    st.warning("Tài khoản của bạn phải đăng ký trước mới thực hiện được chức năng này.")
     with col1:
-        st.info("Ghi /xacthuc trong khung chat để lấy mã xác thực trong tin nhắn Telegram.")
-        st.warning("Tài khoản của bạn phải đăng ký trước mới thực hiện được chức năng này.")
         code1 = st.text_input("Nhập mã xác thực trong tin nhắn Telegram:")
     with col2:
         code2 = st.text_input("Nhập mã xác thực trong app Google Authenticator:")
