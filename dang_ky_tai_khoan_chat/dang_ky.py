@@ -1,6 +1,6 @@
 import streamlit as st
 from firebase import firebase
-from time import sleep
+from time import sleep, time
 import pyotp
 
 totp = pyotp.TOTP(st.secrets["otp_secret"])
@@ -9,6 +9,18 @@ firebase = firebase.FirebaseApplication(st.secrets["firebase_link_project"], Non
 def rerun():
     raise st.script_runner.RerunException(st.script_request_queue.RerunData(None))
 
+def wait(str0):
+    while(firebase.get(str0, None)==0):
+        cnt = 0
+        start = time()
+        if (time() - start >= 1):
+            cnt +=1
+            start = time()
+        if cnt == 10: break
+        sleep(0.001)
+    if cnt == 10: st.error("Hệ thống không hoạt động, hãy thử lại sau.")
+    else: rerun()
+    
 page = st.selectbox("", ["Đăng ký tài khoản điều khiển nhà", "Đăng nhập từ xa"])
 
 if page == "Đăng ký tài khoản điều khiển nhà":
@@ -36,8 +48,8 @@ if page == "Đăng ký tài khoản điều khiển nhà":
             firebase.put("/", "request/uid", uid)
             firebase.put("/", "request/code", code2)
             st.write("Đang đăng ký...")
-            while(firebase.get('/request/success', None)==0): pass
-            rerun()
+            wait("/request/success")
+                               
         else: st.error("Hãy kiểm tra lại mã xác thực trong app Google Authenticator.")
 
     if firebase.get('/request/success', None)==1:
@@ -64,8 +76,7 @@ if page == "Đăng nhập từ xa":
         firebase.put("/", "login/code2", code2)
         firebase.put("/", "login/re_login", 1)
         st.write("Đang đăng nhập...")
-        while(firebase.get('/login/success', None)==0): pass
-        rerun()
+        wait("/login/success")
         
     if firebase.get('/login/success', None)==1:
         st.info("Đăng nhập thành công.")
