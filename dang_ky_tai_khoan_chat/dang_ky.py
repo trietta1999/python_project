@@ -5,13 +5,13 @@ import pyotp
 
 totp = pyotp.TOTP(st.secrets["otp_secret"])
 firebase = firebase.FirebaseApplication(st.secrets["firebase_link_project"], None)
+success = True
 
 def rerun():
     raise st.script_runner.RerunException(st.script_request_queue.RerunData(None))
 
 def wait(str0):
-    success = True
-    st.write(time())
+    global success
     while(firebase.get(str0, None)==0):
         start = time()
         if (time() - start >= 5):
