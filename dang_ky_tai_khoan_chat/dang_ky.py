@@ -11,6 +11,7 @@ def rerun():
 
 def wait(str0):
     success = True
+    st.write(time())
     while(firebase.get(str0, None)==0):
         start = time()
         if (time() - start >= 5):
