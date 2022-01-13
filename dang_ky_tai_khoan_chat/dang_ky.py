@@ -45,10 +45,10 @@ if page == "Đăng ký tài khoản điều khiển nhà":
     dk = st.button("Đăng ký")
     if dk:
         if (totp.verify(code1) or code1==st.secrets["test_code"]):
+            st.write("Đang đăng ký...")
             firebase.put("/", "request/re_uid", 1)
             firebase.put("/", "request/uid", uid)
             firebase.put("/", "request/code", code2)
-            st.write("Đang đăng ký...")
             wait("/request/success")
                                
         else: st.error("Hãy kiểm tra lại mã xác thực trong app Google Authenticator.")
@@ -73,11 +73,14 @@ if page == "Đăng nhập từ xa":
     dk = st.button("Đăng nhập")
     
     if dk:
-        firebase.put("/", "login/code1", code1)
-        firebase.put("/", "login/code2", code2)
-        firebase.put("/", "login/re_login", 1)
-        st.write("Đang đăng nhập...")
-        wait("/login/success")
+        if (totp.verify(code2) or code2==st.secrets["test_code"]):
+            st.write("Đang đăng nhập...")
+            firebase.put("/", "login/code1", code1)
+            firebase.put("/", "login/code2", code2)
+            firebase.put("/", "login/re_login", 1)
+            wait("/login/success")
+            
+        else: st.error("Hãy kiểm tra lại mã xác thực trong app Google Authenticator.")
         
     if firebase.get('/login/success', None)==1:
         st.info("Đăng nhập thành công.")
