@@ -10,15 +10,14 @@ def rerun():
     raise st.script_runner.RerunException(st.script_request_queue.RerunData(None))
 
 def wait(str0):
+    success = True
     while(firebase.get(str0, None)==0):
-        cnt = 0
         start = time()
-        if (time() - start >= 1):
-            cnt +=1
-            start = time()
-        if cnt == 10: break
+        if (time() - start >= 5):
+            success = False
+            break
         sleep(0.001)
-    if cnt == 10: st.error("Hệ thống không hoạt động, hãy thử lại sau.")
+    if success == False: st.error("Hệ thống không hoạt động, hãy thử lại sau.")
     else: rerun()
     
 page = st.selectbox("", ["Đăng ký tài khoản điều khiển nhà", "Đăng nhập từ xa"])
