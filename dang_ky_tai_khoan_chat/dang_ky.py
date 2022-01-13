@@ -12,9 +12,10 @@ def rerun():
 
 def wait(str0):
     global success
+    start = time()
     while(firebase.get(str0, None)==0):
-        start = time()
-        if (time() - start >= 5):
+       
+        if (time() - start >= 10):
             success = False
             break
         sleep(0.001)
