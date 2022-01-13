@@ -61,7 +61,7 @@ if page == "Đăng ký tài khoản điều khiển nhà":
         firebase.put("/", "request/success", 0)
         
 if page == "Đăng nhập từ xa":
-    st.info("Ghi //xacthuc trong khung chat để lấy mã xác thực trong tin nhắn Telegram.")
+    st.info("Ghi \"/cmd xacthuc\" trong khung chat để lấy mã xác thực trong tin nhắn Telegram.")
     st.warning("Tài khoản của bạn phải đăng ký trước mới thực hiện được chức năng này.")
     
     col1, col2 = st.columns(2)
@@ -86,5 +86,5 @@ if page == "Đăng nhập từ xa":
         st.info("Đăng nhập thành công.")
         firebase.put("/", "login/success", 0)
     elif firebase.get('/login/success', None)==2:
-        st.error("Đăng nhập không thành công. Ghi //xacthuc trong khung chat để lấy mã xác thực mới trong tin nhắn Telegram")
+        st.error("Đăng nhập không thành công. Ghi \"/cmd xacthuc\" trong khung chat để lấy mã xác thực mới trong tin nhắn Telegram")
         firebase.put("/", "login/success", 0)
