@@ -31,7 +31,7 @@ if page == "Đăng ký tài khoản điều khiển nhà":
 
     st.info("Bước 1. Xem cách lấy ID người dùng Telegram của bạn tại [đây](https://bigone.zendesk.com/hc/en-us/articles/360008014894-How-to-get-the-Telegram-user-ID-).")
 
-    uid = st.text_input("ID người dùng:")
+    uid = st.text_input("ID người dùng Telagram:")
 
     st.info("Bước 2. Lấy mã xác thực trên màn hình LCD trong nhà và trong app Google Authenticator.")
 
@@ -57,7 +57,7 @@ if page == "Đăng ký tài khoản điều khiển nhà":
         st.info("Đăng ký tài khoản thành công.")
         firebase.put("/", "request/success", 0)
     elif firebase.get('/request/success', None)==2:
-        st.error("Đăng ký tài khoản không thành công. Hãy kiểm tra lại UID/mã xác thực Google Authenticator/mã trên LCD và thử lại.")
+        st.error("Đăng ký tài khoản không thành công. Hãy kiểm tra lại UID/mã xác thực trên LCD và thử lại.")
         firebase.put("/", "request/success", 0)
         
 if page == "Đăng nhập từ xa":
