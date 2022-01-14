@@ -33,14 +33,14 @@ if page == "Đăng ký tài khoản điều khiển nhà":
 
     uid = st.text_input("ID người dùng:")
 
-    st.info("Bước 2. Lấy mã xác thực trong app Google Authenticator và mã trên màn hình LCD trong nhà.")
+    st.info("Bước 2. Lấy mã xác thực trên màn hình LCD trong nhà và trong app Google Authenticator.")
 
     col1, col2 = st.columns(2)
     code1 = code2 = ''
     with col1:
-        code1 = st.text_input("Mã xác thực Google Authenticator:")
-    with col2:
         code2 = st.text_input("Mã xác thực trên màn hình LCD:")
+    with col2:
+        code1 = st.text_input("Mã xác thực Google Authenticator:")
 
     dk = st.button("Đăng ký")
     if dk:
