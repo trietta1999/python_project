@@ -1,4 +1,3 @@
-pyotp
 python-jwt
 gcloud 
 sseclient
