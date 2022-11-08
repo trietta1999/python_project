@@ -8,4 +8,4 @@ firebase = firebase.FirebaseApplication('https://smart-steward-default-rtdb.fire
 a = random.randint(0,10)
 firebase.put("/","cs",a)
 time.sleep(0.5)
-st.script_runner.RerunException(st.script_request_queue.RerunData(None))
+st.experimental_rerun()
