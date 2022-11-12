@@ -17,25 +17,25 @@ TIMEOUT = 20
 st.title("Test Selenium")
 st.markdown("You should see some random Football match text below in about 21 seconds")
 
-firefoxOptions = Options()
-firefoxOptions.add_argument("--headless")
-service = Service(GeckoDriverManager().install())
-driver = webdriver.Firefox(
-    options=firefoxOptions,
-    service=service,
-)
-driver.get(URL)
+# firefoxOptions = Options()
+# firefoxOptions.add_argument("--headless")
+# service = Service(GeckoDriverManager().install())
+# driver = webdriver.Firefox(
+#     options=firefoxOptions,
+#     service=service,
+# )
+# driver.get(URL)
 
-try:
-    WebDriverWait(driver, TIMEOUT).until(
-        EC.visibility_of_element_located((By.XPATH, XPATH,))
-    )
+# try:
+#     WebDriverWait(driver, TIMEOUT).until(
+#         EC.visibility_of_element_located((By.XPATH, XPATH,))
+#     )
 
-except TimeoutException:
-    st.warning("Timed out waiting for page to load")
-    driver.quit()
+# except TimeoutException:
+#     st.warning("Timed out waiting for page to load")
+#     driver.quit()
 
-time.sleep(10)
-elements = driver.find_elements_by_xpath(XPATH)
-st.write([el.text for el in elements])
-driver.quit()
+# time.sleep(10)
+# elements = driver.find_elements_by_xpath(XPATH)
+# st.write([el.text for el in elements])
+# driver.quit()
