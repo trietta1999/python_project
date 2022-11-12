@@ -17,14 +17,14 @@ TIMEOUT = 20
 st.title("Test Selenium")
 st.markdown("You should see some random Football match text below in about 21 seconds")
 
-# firefoxOptions = Options()
-# firefoxOptions.add_argument("--headless")
-# service = Service(GeckoDriverManager().install())
-# driver = webdriver.Firefox(
-#     options=firefoxOptions,
-#     service=service,
-# )
-# driver.get(URL)
+firefoxOptions = Options()
+firefoxOptions.add_argument("--headless")
+service = Service(GeckoDriverManager().install())
+driver = webdriver.Firefox(
+    options=firefoxOptions,
+    service=service,
+)
+driver.get(URL)
 
 # try:
 #     WebDriverWait(driver, TIMEOUT).until(
