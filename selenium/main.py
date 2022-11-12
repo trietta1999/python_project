@@ -1,6 +1,3 @@
-from selenium import webdriver
-from selenium.webdriver.firefox.service import Service as FirefoxService
-from webdriver_manager.firefox import GeckoDriverManager
-
-driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
-# driver.get("https://google.com")
+from webdriver_manager.core.utils import read_version_from_cmd, PATTERN
+version = read_version_from_cmd("/usr/bin/firefox-bin --version", PATTERN["firefox"])
+driver_binary = FirefoxDriverManager(version=version).install()
