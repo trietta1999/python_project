@@ -4,7 +4,7 @@ from PIL import Image
 
 def rerun(t):
     time.sleep(t)
-    raise st.script_runner.RerunException(st.script_request_queue.RerunData(None))
+    #raise st.script_runner.RerunException(st.script_request_queue.RerunData(None))
 
 def main():
     st.set_page_config("Pages")
