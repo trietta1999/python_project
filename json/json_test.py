@@ -1,6 +1,12 @@
 import streamlit as st
-import json
 
-obj = {"x": 1, "y": 2}
-st.write(obj)
-st.write(json.dumps(obj))
+st.json({
+    'foo': 'bar',
+    'baz': 'boz',
+    'stuff': [
+        'stuff 1',
+        'stuff 2',
+        'stuff 3',
+        'stuff 5',
+    ],
+})
