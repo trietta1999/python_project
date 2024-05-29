@@ -8,4 +8,4 @@ st.write("API")
 def index(name):
     return template('<b>Hello {{name}}</b>!', name=name)
 
-Thread(target = run).start()
+Thread(target = lambda: run(port = 8501)).start()
