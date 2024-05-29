@@ -1,5 +1,6 @@
 import bottle
 import streamlit as st
+import threading
 
 app = bottle.app()
 
@@ -12,4 +13,4 @@ st.title('Dữ liệu API')
 
 # Chạy ứng dụng Bottle
 if __name__ == '__main__':
-    app.run(port=8501)
+    threading.Thread(target = lambda: app.run(port=8501)).start()
