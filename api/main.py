@@ -1,5 +1,6 @@
 from bottle import route, run, template
 import streamlit as st
+from threading import Thread
 
 st.write("API")
 
@@ -7,4 +8,4 @@ st.write("API")
 def index(name):
     return template('<b>Hello {{name}}</b>!', name=name)
 
-run()
+Thread(target = run()).start()
