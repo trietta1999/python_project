@@ -1,5 +1,4 @@
-import bottle
-import socket
+import bottle, socket
 import streamlit as st
 
 hostname = socket.gethostname()
