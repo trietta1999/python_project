@@ -1,8 +1,5 @@
-import bottle, socket
+import bottle, requests
 import streamlit as st
-
-hostname = socket.gethostname()
-IPAddr = socket.gethostbyname(hostname)
 
 app = bottle.app()
 
@@ -12,5 +9,5 @@ def get_data():
 
 # Chạy ứng dụng Bottle
 if __name__ == '__main__':
-    st.write(IPAddr)
+    st.write(requests.get('https://api.ipify.org').content.decode('utf8'))
     app.run(port=8502)
