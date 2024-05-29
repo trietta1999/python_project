@@ -1,11 +1,15 @@
-from bottle import route, run, template
+import bottle
 import streamlit as st
-from threading import Thread
 
-st.write("API")
+app = bottle.app()
 
-@route('/hello/<name>')
-def index(name):
-    return template('<b>Hello {{name}}</b>!', name=name)
+@app.route('/data')
+def get_data():
+    return "data"
 
-Thread(target = lambda: run(port = 8501)).start()
+# Hiển thị dữ liệu trong giao diện Streamlit
+st.title('Dữ liệu API')
+
+# Chạy ứng dụng Bottle
+if __name__ == '__main__':
+    app.run(port=8501)
