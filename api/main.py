@@ -1,4 +1,7 @@
 from bottle import route, run, template
+import streamlit as st
+
+st.write("API")
 
 @route('/hello/<name>')
 def index(name):
