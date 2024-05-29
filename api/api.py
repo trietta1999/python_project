@@ -1,5 +1,6 @@
 import bottle
 import socket
+import streamlit as st
 
 hostname = socket.gethostname()
 IPAddr = socket.gethostbyname(hostname)
@@ -12,5 +13,5 @@ def get_data():
 
 # Chạy ứng dụng Bottle
 if __name__ == '__main__':
-    print(IPAddr)
+    st.write(IPAddr)
     app.run(port=8502)
